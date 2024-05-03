@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="Content-Security-Policy" content="Access-Control-Allow-Origin='https://github.com/HaSan1y/res'; Vary='Origin'">
+		<!-- <meta http-equiv="Content-Security-Policy" content="Access-Control-Allow-Origin='https://github.com/HaSan1y/res'; Vary='Origin'"> -->
 
-		<title>Document</title>
+		<title>cards</title>
 		<link rel="stylesheet" href="style.css" />
 		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 	</head>
@@ -26,8 +26,8 @@
 				</p>
 			</div>
 			<div class="buttons">
-				<button class="button" id="acceptBtn">Accept</button>
-				<button class="button">Decline</button>
+				<button type="button" class="button" id="acceptBtn">Accept</button>
+				<button type="button" class="button">Decline</button>
 			</div>
 		</div>
 		<!-- terms -->
@@ -59,7 +59,7 @@
 				</p>
 
 				<div class="modal-footer">
-					<button id="closeDisclaimerModal">Close</button>
+					<button type="button" id="closeDisclaimerModal">Close</button>
 				</div>
 			</div>
 		</div>
@@ -112,9 +112,8 @@
 					<label for="t3">
 						<input type="text" name="t3" id="t3" name="t3" placeholder="solution" maxlength="12"
 					/></label>
-	
-					<button type="submit" id="txtbtn">Add text to file</button>
-					<!-- <h3 id="xxx" onclick="xxx()">xxx</h3> -->
+					<button type="submit" id="txtbtn" >Add text to file</button>
+					<!-- submit onclick="l(this)" -->
 				</form><br>
 				<div class="auto-grid" id="card-holder">
 					<!-- cards -->
@@ -135,6 +134,9 @@
 				<a href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=">https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=</a><br>
 
 				<br>
+				<button type="button" id="txtbtn" onclick="addTextToFile()">save 'title' into .txt-file</button>
+				<button type="button" id="txtbtn" onclick="remove()">remove added cards</button>
+					<!-- submit onclick="l(this)" -->
 				<h5>hasan.yildirim@outlook.com</h5>
 			</div>
 			<!-- <form method="post" class="xx" enctype="multipart/form-data">
@@ -147,4 +149,21 @@
 		</main>
 	</body>
 	<script src="script.js"></script>
+	<!-- 
+		bugs that still need to be corrected: 
+		not being read correctlay +ids, when showmorebtn is being pressed,
+		a btn to decrease displayed cards(correct ids),
+		better english,
+		maybe use google translate api, instead of sol.txt,
+		some accessibility aria label for poor sight, handling, naming of tags,links,pic. 
+		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins?
+		same functionality on webpage, instead only locally,
+		a btn for new file(s) being loaded, displayed,
+		less overfunctionality, addevenetlisteners, unnecessry code.
+		maybe figure out, js problems on your own, instead rely -ask -copypaste from chatgpd.
+		fileupload which is somehow with preventdefault reloading the page, wtf even chatgpd doesnt know why
+	maybe with correct prompts asking an webgenerator ai, would yield better results than what i(x*chatgpdasskisser) have accomplished in a week
+	better domain if possible from vercel wtf why they give it link khaki damn them
+	try adsense with banners after cleaning
+-->
 </html>

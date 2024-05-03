@@ -4,7 +4,7 @@ const disc = document.querySelector("#disclaimerModal");
 
 const cards = document.querySelectorAll("#card");
 const cardHolder = document.getElementById('card-holder');
-
+let kek=8;
 // cookie+disclaimer
 const executeCodes = () => {
   if (!document.cookie.includes("cookie-consent")) {
@@ -64,7 +64,7 @@ window.addEventListener("load", () => {
   executeCodes();
   setTheme();
   displ();
-  // todo when upload file, cant see err, wrong filetype, nor console.log, ?preventdefault?
+  // todo when upload file, cant see err, wrong filetype, nor console.log, ?submit?e.preventdefault?
   //  upload png recreate png into folder
   // const formx = document.querySelector('form.xx');
   // formx.addEventListener('submit', (e) => {
@@ -137,8 +137,9 @@ async function displ() {
 }
 
 function showMoreCards(button, sentences, showmore) {
-  let totalCards = document.querySelectorAll('.card').length;
-  let cardsToShow = totalCards + showmore*2;
+  let totalCards = document.querySelectorAll('.card').length+kek;
+  kek+=8;
+  let cardsToShow = totalCards + showmore * 2;
 
   for (let i = totalCards; i < cardsToShow && i < sentences.length; i++) {
     const card = document.createElement('div');
@@ -195,17 +196,21 @@ async function toggleCardContent(card, sentences) {
     }
   // }
 }
+// txtbtn.preventDefault();
+//update sen.txt + sol.txt        serverside app
+document.getElementById('txtbtn').addEventListener('submit', (event)=> {
+event.preventDefault();
 
-//update sen.txt + sol.txt
-document.getElementById('txtbtn').addEventListener('click', function (event) {
-  event.preventDefault(); // Prevent form submission
+console.log(event);
+console.debug()
+debugger;
   const t1 = document.getElementById('t1').value;
   const t2 = document.getElementById('t2').value;
   const t3 = document.getElementById('t3').value;
   const sentences = [t1, t2];
   const solution = [t3];
 
-  fetch('https://github.com/HaSan1y/res/blob/main/sen.txt', {
+  fetch('http://127.0.0.1:3000/sen', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(sentences)
@@ -214,8 +219,8 @@ document.getElementById('txtbtn').addEventListener('click', function (event) {
     .then(data => console.log(data))
     .catch(error => console.error('Error writing to sen.txt:', error));
 
-  // http://127.0.0.1:3000/sol
-  fetch('https://github.com/HaSan1y/res/blob/main/sol.txt', {
+  // 
+  fetch('http://127.0.0.1:3000/sol', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(solution)
@@ -230,3 +235,25 @@ document.getElementById('txtbtn').addEventListener('click', function (event) {
 //   wrapper2.style.maxHeight = "10%";
 //   wrapper2.style.overflow = "hidden";
 // }
+
+//update sen.txt + sol.txt        clientside app
+function addTextToFile() {
+  var text = document.getElementById('t1').value;
+  var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+  var link = document.createElement("a");
+  var url = URL.createObjectURL(blob);
+  link.setAttribute("href", url);
+  link.setAttribute("download", "file.txt");
+  link.style.visibility = 'hidden';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+ }
+ 
+ function remove(){
+  const cards = document.querySelectorAll('.card');
+  for (let i = cards.length - 1; i >= cards.length - kek+8 && i >= 0; i--) {
+    cards[i].remove();
+  }
+  if(kek>8)kek-=8
+ }
