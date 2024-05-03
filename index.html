@@ -30,7 +30,7 @@
 				<button class="button">Decline</button>
 			</div>
 		</div>
-		<!--  -->
+		<!-- terms -->
 		<div id="disclaimerModal">
 			<div class="modal-content">
 				<h2>Disclaimer and Liability Notice</h2>
@@ -63,21 +63,7 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- To create a modal that disclaims liability for sharing job rejections on your website, you should ensure it clearly communicates the limitations of your site's content and the potential legal implications. Here's a suggested structure for the modal:
-    Title: "Disclaimer and Liability Notice"
-    Introduction: Briefly explain the purpose of the website and the content it contains.
-    Content Warning: Clearly state that the website contains information about job rejections, including reasons for rejection and feedback.
-    Liability Disclaimer:
-        Acknowledge that the information shared on the website is for informational purposes only and does not constitute legal advice.
-        State that you are not liable for any defamation, privacy violations, or any other legal issues arising from the content shared on the website.
-        Mention that the information is shared without any warranties or guarantees.
-    User Acknowledgment:
-        Ask users to acknowledge that they understand and agree to the terms of the disclaimer before proceeding to view the website's content.
-        Provide a checkbox or a similar mechanism for users to indicate their agreement.
-    Contact Information: Include contact information for users who have questions or concerns about the disclaimer or the content on the website.
- -->
-
+		<!-- colorpicker -->
 		<form class="color-picker" action="">
 			<fieldset>
 				<legend class="visually-hidden">Pick a color scheme</legend>
@@ -101,72 +87,39 @@
 		<main>
 			<div class="wrapper2" id="wrapper2">
 				<h1>Color theme's the easy way</h1>
+				<p>^switch colortheme by pressing the radio button^</p>
+				<p>yes i hasan yildirim made this website. with a little help of chatgpd.</p>
 				<p>
-					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati natus error quam
-					suscipit architecto enim nobis vero eaque. Repudiandae quisquam impedit fugiat neque
-					delectus doloremque!
+					beware, the site is still under construction, the idea of the sites functionality basicly is
+					that any website viewer can make custom cards on it, with frontside questions and
+					backside solution on each card, simply click the card to view the solution when you
+					feel like it.
 				</p>
 				<p>
-					Rem neque inventore necessitatibus totam incidunt eius reprehenderit quis ipsam
-					officia praesentium, quod vero soluta maxime iure nobis dolorum a quibusdam officiis
-					ratione debitis? Ipsam.
+					add data to a card from the inputfield, see if you can figure out the solution which
+					is on other data file. hope this explains it in simple terms.
 				</p>
-				<h2>Something interesting</h2>
+				
+				<form method="post" class="x" enctype="multipart/form-data">
+					<label for="t1">
+						<input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12"
+					/></label>
+					<label for="t2">
+						<input type="text" name="t2" id="t2" name="t2" placeholder="question" maxlength="12"
+					/></label>
+					<label for="t3">
+						<input type="text" name="t3" id="t3" name="t3" placeholder="solution" maxlength="12"
+					/></label>
+	
+					<button type="submit" id="txtbtn">Add text to file</button>
+					<h3 id="xxx">xxx</h3>
+				</form>
+				<h2>hint: Learn words</h2>
 				<div class="auto-grid" id="card-holder">
-					<!-- <div class="card" id="card">
-						<h3 class="card__title">A medium-length title</h3>
-						<p>
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, atque.
-						</p>
-					</div>
-					<div class="card" id="card">
-						<h3 class="card__title">A short title</h3>
-						<p>Voluptatem excepturi tempore quo recusandae sunt ullam earum optio cum?</p>
-					</div>
-					<div class="card" id="card">
-						<h3 class="card__title">A medium-length title</h3>
-						<p>
-							Nam laudantium voluptas, tenetur repellendus numquam rem incidunt deleniti
-							veritatis?
-						</p>
-					</div>
-					<div class="card" id="card">
-						<h3 class="card__title">A much longer title than the others</h3>
-						<p>
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, atque.
-						</p>
-					</div>
-					<div class="card" id="card">
-						<h3 class="card__title">A medium-legth title</h3>
-						<p>Voluptatem excepturi tempore quo recusandae sunt ullam earum optio cum?</p>
-					</div>
-					<div class="card" id="card">
-						<h3 class="card__title">A short title</h3>
-						<p>
-							Nam laudantium voluptas, tenetur repellendus numquam rem incidunt deleniti
-							veritatis?
-						</p>
-					</div> -->
+					<!-- cards -->
 				</div>
-				<p>
-					Rerum, neque! Consequuntur obcaecati beatae dolorum, fuga itaque iusto dicta et
-					corporis facere ea necessitatibus odit cum, voluptates harum, dolore maiores aliquid
-					distinctio repellendus nesciunt!
-				</p>
-				<p>
-					Unde dolor quod delectus obcaecati labore laboriosam optio sit eligendi. Excepturi
-					explicabo quod obcaecati pariatur error, in, accusantium eum omnis repellat qui,
-					aliquid magnam odit?
-				</p>
+				<!--  -->
 			</div>
-			<form method="post" class="x" enctype="multipart/form-data">
-				<label for="t1"> <input type="text" name="t1" id="t1" name="t1" /></label>
-				<label for="t2"> <input type="text" name="t2" id="t2" name="t2" /></label>
-				<label for="t3"> <input type="text" name="t3" id="t3" name="t3" /></label>
-
-				<button type="submit" id="txtbtn">Add text to file</button>
-				<h3 id="xxx">xxx</h3>
-			</form>
 			<!-- <form method="post" class="xx" enctype="multipart/form-data">
 				<label for="files">
 					<input type="file" name="files" id="files" accept=".png" name="pic" multiple />

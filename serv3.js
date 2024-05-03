@@ -39,19 +39,18 @@ app.post('/sol', (req, res) => {
 });
 
 
-
 // del lines
-function deleteLines(filePath, linesToDelete) {
-   const fileContents = fs.readFileSync(filePath, 'utf8');
-   const lines = fileContents.split('\n');
-   for (let i = linesToDelete.length - 1; i >= 0; i--) {
-     lines.splice(linesToDelete[i], 1);
-   }
-   const newContents = lines.join('\n');
-   fs.writeFileSync(filePath, newContents, 'utf8');
- }
+// function deleteLines(filePath, linesToDelete) {
+//    const fileContents = fs.readFileSync(filePath, 'utf8');
+//    const lines = fileContents.split('\n');
+//    for (let i = linesToDelete.length - 1; i >= 0; i--) {
+//      lines.splice(linesToDelete[i], 1);
+//    }
+//    const newContents = lines.join('\n');
+//    fs.writeFileSync(filePath, newContents, 'utf8');
+//  }
 
- xxx.addEventListener('click', () => { deleteLines('sen.txt', [0, 1, 2]); })
+//  xxx.addEventListener('click', () => { deleteLines('sen.txt', [0, 1, 2]); })
 
 
  app.listen(port, () => console.log(`Server listening at ${port}`));
