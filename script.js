@@ -99,15 +99,15 @@ async function displ() {
       const card = document.createElement('div');
       card.classList.add('card');
       card.id = `card-${i}`;
-  
+
       const heading = document.createElement('h2');
       heading.textContent = sentences[i];
-  
+
       const paragraph = document.createElement('p');
       if (i + 1 < sentences.length) {
         paragraph.textContent = sentences[i + 1]; i++;
       }
-  
+
       card.addEventListener('click', () => {
         toggleCardContent(card, sentences);
       });
@@ -163,13 +163,13 @@ async function toggleCardContent(card, sentences) {
         const response = await fetch('sol.txt');
         const data = await response.text();
         const solution = data.trim().split('\n');
-        if(cardIndex>0){
-          let x = cardIndex/2;
-          paragraph.textContent = solution[x]+`${x}`;
-        }else{
-          paragraph.textContent = solution[cardIndex]+`${cardIndex}`;
+        if (cardIndex > 0) {
+          let x = cardIndex / 2;
+          paragraph.textContent = solution[x] + `${x}`;
+        } else {
+          paragraph.textContent = solution[cardIndex] + `${cardIndex}`;
         }
-        
+
       } catch (error) {
         console.error('Error reading file:', error);
       }
@@ -179,7 +179,7 @@ async function toggleCardContent(card, sentences) {
   }
 }
 
-document.getElementById('txtbtn').addEventListener('click', function(event) {
+document.getElementById('txtbtn').addEventListener('click', function (event) {
   event.preventDefault(); // Prevent form submission
   const t1 = document.getElementById('t1').value;
   const t2 = document.getElementById('t2').value;
@@ -196,18 +196,21 @@ document.getElementById('txtbtn').addEventListener('click', function(event) {
     .then(data => console.log(data))
     .catch(error => console.error('Error writing to sen.txt:', error));
 
-   fetch('http://127.0.0.1:3000/sol', {
-     method: 'POST',
-     headers: { 'Content-Type': 'application/json' },
-     body: JSON.stringify(solution)
-   })
-     .then(response => response.text())
-     .then(data => console.log(data))
-     .catch(error => console.error('Error writing to sol.txt:', error));
+  fetch('http://127.0.0.1:3000/sol', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(solution)
+  })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error writing to sol.txt:', error));
 });
 
 
-
+function xxx() {
+  wrapper2.style.maxHeight = "10%";
+  wrapper2.style.overflow = "hidden";
+}
 
 /*
 Here are some suggestions for the provided code:

@@ -1,12 +1,122 @@
 card1 title
-inkling
+oak. 
 card2 title
-rotund
+club. 
 card3 title
-shifty
+juggle. 
 card4 title
-stagnant
+embellish. 
 card5 title
-extemporaneous
-card6
-uuuuuuuuuuuu
+divest. 
+card6 title
+efface. 
+card7 title
+implore. 
+card8 title
+infallible. 
+card9 title 
+racant. 
+card10 title
+recoup. 
+card11 title
+lax. 
+card12 title
+delectable. 
+card13 title 
+quash. 
+card14 title
+entrapment. 
+card15 title
+prattle. 
+card16 title
+assail. 
+card17 title
+designate. 
+card18 title
+arcane. 
+card19 title
+leeway. 
+card20 title
+pleat. 
+card21 title
+solder. 
+card22 title
+beguile. 
+card23 title
+seduce. 
+card24 title
+dowager. 
+card25 title
+matron. 
+card26 title
+sire. 
+card27 title
+protracted. 
+card28 title 
+florid. 
+card29 title
+admissible. 
+card30 title 
+drab. 
+card31 title
+spiffy. 
+card32 title
+facile. 
+card33 title
+incipient. 
+card34 title
+galling. 
+card35 title
+nascent. 
+card36 title
+subsidiary. 
+card37 title 
+begrudge. 
+card38 title
+breach. 
+card39 title
+vehement. 
+card40 title
+acquiesce. 
+card41 title
+cauterize. 
+card42 title
+yeast. 
+card43 title
+doohickey. 
+card44 title
+equestrian. 
+card45 title
+niggardly. 
+card46 title
+gargantuan. 
+card47 title
+stanchion. 
+card48 title
+strumpet. 
+card49 title
+forstall. 
+card50 title
+hanker. 
+card51 title
+indolence. 
+card52 title
+abscond. 
+card53 title
+fugacious. 
+card54 title
+querolous. 
+card55 title
+vapid. 
+card56 title
+inkling. 
+card57 title
+rotund. 
+card58 title
+shifty. 
+card59 title
+stagnant. 
+card60 title
+extemporaneous. 
+card61 title
+t11 

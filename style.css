@@ -13,7 +13,10 @@
   --clr-text: hsl(0 0% 15%);
   --clr-heading: hsl(0 0% 25%);
 }
-
+html{
+  opacity:0.9;
+  background-image: url(blog1.webp);
+}
 body {
   min-height: 100vh;
   background-color: #4070f4;
@@ -164,6 +167,8 @@ body.hide {
   background-color: var(--clr-card-bg);
   border-block-start: 0.5rem solid;
   border-radius: 0.5rem;
+  opacity:0.6;
+  box-shadow: 1px 1px 4px 5px red;
 }
 
 .card>* {
@@ -288,4 +293,8 @@ body.hide {
 
 #card{
 border: red solid 1px;
+}
+#card-holder{
+  opacity:0.4;
+background-image: url(blog1.webp);
 }
