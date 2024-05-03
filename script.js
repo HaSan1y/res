@@ -207,7 +207,7 @@ document.getElementById('txtbtn').addEventListener('click', function (event) {
 });
 
 
-function xxx() {
-  wrapper2.style.maxHeight = "10%";
-  wrapper2.style.overflow = "hidden";
-}
+// function xxx() {
+//   wrapper2.style.maxHeight = "10%";
+//   wrapper2.style.overflow = "hidden";
+// }

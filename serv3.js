@@ -49,8 +49,6 @@ app.post('/sol', (req, res) => {
 //    const newContents = lines.join('\n');
 //    fs.writeFileSync(filePath, newContents, 'utf8');
 //  }
-
 //  xxx.addEventListener('click', () => { deleteLines('sen.txt', [0, 1, 2]); })
-
 
  app.listen(port, () => console.log(`Server listening at ${port}`));
