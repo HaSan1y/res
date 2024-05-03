@@ -2,6 +2,9 @@ const cookieBox = document.querySelector(".wrapper");
 const buttons = document.querySelectorAll(".button");
 const disc = document.querySelector("#disclaimerModal");
 
+const cards = document.querySelectorAll("#card");
+const cardHolder = document.getElementById('card-holder');
+
 // cookie+disclaimer
 const executeCodes = () => {
   if (!document.cookie.includes("cookie-consent")) {
@@ -85,78 +88,94 @@ window.addEventListener("load", () => {
 });
 
 // read from file display to html toggle
-const cards = document.querySelectorAll("#card");
-const cardHolder = document.getElementById('card-holder');
-
 async function displ() {
   try {
     const response = await fetch('sen.txt');
     const data = await response.text();
     const sentences = data.trim().split('\n');
+    let showmore = 8; // Initial number of cards to display
+    let totalCards = 0; // Keep track of the total number of cards displayed
+
+    const showMoreButton = document.createElement('button');
+    showMoreButton.textContent = 'Show More';
+    showMoreButton.setAttribute('id','abc');
+    showMoreButton.addEventListener('click', () => {
+      showMoreCards(showMoreButton, sentences, showmore);
+    });
 
     for (let i = 0; i < sentences.length; i++) {
-      const card = document.createElement('div');
-      card.classList.add('card');
-      card.id = `card-${i}`;
+      if (totalCards < showmore) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.id = `card-${i}`;
 
-      const heading = document.createElement('h2');
-      heading.textContent = sentences[i];
+        const heading = document.createElement('h2');
+        heading.textContent = sentences[i];
 
-      const paragraph = document.createElement('p');
-      if (i + 1 < sentences.length) {
-        paragraph.textContent = sentences[i + 1]; i++;
+        const paragraph = document.createElement('p');
+        if (i + 1 < sentences.length) {
+          paragraph.textContent = sentences[i + 1];
+          i++;
+        }
+
+        card.addEventListener('click', () => {
+          toggleCardContent(card, sentences);
+        });
+        card.appendChild(heading);
+        card.appendChild(paragraph);
+        cardHolder.appendChild(card);
+        totalCards++;
+      } else {
+        break;
       }
-
-      card.addEventListener('click', () => {
-        toggleCardContent(card, sentences);
-      });
-      card.appendChild(heading);
-      card.appendChild(paragraph);
-      cardHolder.appendChild(card);
     }
 
-
-    cards.forEach((card, index) => {
-      const firstChild = card.firstElementChild;
-      const lastChild = card.lastElementChild;
-      let isClicked = false;
-
-      card.addEventListener('click', () => {
-        const sentenceIndex = index * 2;
-        if (!isClicked) {
-          if (sentenceIndex < sentences.length) {
-            firstChild.textContent = sentences[sentenceIndex];
-            if (sentenceIndex + 1 < sentences.length) {
-              lastChild.textContent = sentences[sentenceIndex + 1];
-            } else {
-              lastChild.textContent = '';
-            }
-          } else {
-            firstChild.textContent = '';
-            lastChild.textContent = '';
-          }
-        } else {
-          firstChild.textContent = '';
-          lastChild.textContent = '';
-        }
-        isClicked = !isClicked;
-        console.log(`Clicked card at index ${index}`);
-      });
-    });
+    cardHolder.appendChild(showMoreButton);
   } catch (error) {
     console.error('Error reading file:', error);
+  }
+}
+
+function showMoreCards(button, sentences, showmore) {
+  let totalCards = document.querySelectorAll('.card').length;
+  let cardsToShow = totalCards + showmore*2;
+
+  for (let i = totalCards; i < cardsToShow && i < sentences.length; i++) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.id = `card-${i}`;
+
+    const heading = document.createElement('h2');
+    heading.textContent = sentences[i];
+
+    const paragraph = document.createElement('p');
+    if (i + 1 < sentences.length) {
+      paragraph.textContent = sentences[i + 1];
+      i++;
+    }
+
+    card.addEventListener('click', () => {
+      toggleCardContent(card, sentences);
+    });
+    card.appendChild(heading);
+    card.appendChild(paragraph);
+    cardHolder.appendChild(card);
+  }
+
+  if (cardsToShow >= sentences.length) {
+    button.style.display = 'none';
   }
 }
 
 async function toggleCardContent(card, sentences) {
   const heading = card.firstElementChild;
   const paragraph = card.lastElementChild;
-  if (heading.textContent) {
-    heading.textContent = '';
-    paragraph.textContent = '';
-  } else {
+  // if (heading.textContent) {
+  //   heading.textContent = '';
+  //   paragraph.textContent = ''; 
+  // } else {
     const cardIndex = parseInt(card.id.split('-')[1]);
-    heading.textContent = sentences[cardIndex];
+    heading.textContent = sentences[cardIndex];//display title-id of card
     if (cardIndex < sentences.length) {
       try {
         const response = await fetch('sol.txt');
@@ -168,16 +187,16 @@ async function toggleCardContent(card, sentences) {
         } else {
           paragraph.textContent = solution[cardIndex] + `${cardIndex}`;
         }
-
       } catch (error) {
         console.error('Error reading file:', error);
       }
     } else {
       paragraph.textContent = '';
     }
-  }
+  // }
 }
 
+//update sen.txt + sol.txt
 document.getElementById('txtbtn').addEventListener('click', function (event) {
   event.preventDefault(); // Prevent form submission
   const t1 = document.getElementById('t1').value;
@@ -194,8 +213,8 @@ document.getElementById('txtbtn').addEventListener('click', function (event) {
     .then(response => response.text())
     .then(data => console.log(data))
     .catch(error => console.error('Error writing to sen.txt:', error));
-    
-    // http://127.0.0.1:3000/sol
+
+  // http://127.0.0.1:3000/sol
   fetch('https://github.com/HaSan1y/res/blob/main/sol.txt', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

@@ -13,10 +13,12 @@
   --clr-text: hsl(0 0% 15%);
   --clr-heading: hsl(0 0% 25%);
 }
-html{
-  opacity:0.9;
+
+html {
+  opacity: 0.9;
   background-image: url(blog1.webp);
 }
+
 body {
   min-height: 100vh;
   background-color: #4070f4;
@@ -133,7 +135,7 @@ p {
   border-radius: 5px;
   border: 0;
   padding: 2px;
-  position: relative; 
+  position: relative;
   /*pos abs if wanna move*/
   /* border: 1px red solid; */
 }
@@ -167,7 +169,7 @@ body.hide {
   background-color: var(--clr-card-bg);
   border-block-start: 0.5rem solid;
   border-radius: 0.5rem;
-  opacity:0.6;
+  opacity: 0.6;
   box-shadow: 1px 1px 4px 5px red;
 }
 
@@ -291,10 +293,20 @@ body.hide {
   --clr-heading: hsl(209 50% 80%);
 }
 
-#card{
-border: red solid 1px;
+#card {
+  border: red solid 1px;
 }
-#card-holder{
-  opacity:0.4;
-background-image: url(blog1.webp);
+
+#card-holder {
+  opacity: 0.4;
+  background-image: url(blog1.webp);
+}
+
+#abc {
+  display: block;
+  position: fixed;
+  right: 50px;
+  top: 50px;
+  color: red;
+  background-color: black;
 }
