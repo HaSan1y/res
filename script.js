@@ -4,7 +4,7 @@ const disc = document.querySelector("#disclaimerModal");
 
 const cards = document.querySelectorAll("#card");
 const cardHolder = document.getElementById('card-holder');
-let kek=8;
+let kek = 8;
 // cookie+disclaimer
 const executeCodes = () => {
   if (!document.cookie.includes("cookie-consent")) {
@@ -98,7 +98,7 @@ async function displ() {
 
     const showMoreButton = document.createElement('button');
     showMoreButton.textContent = 'Show More';
-    showMoreButton.setAttribute('id','abc');
+    showMoreButton.setAttribute('id', 'abc');
     showMoreButton.addEventListener('click', () => {
       showMoreCards(showMoreButton, sentences, showmore);
     });
@@ -137,8 +137,8 @@ async function displ() {
 }
 
 function showMoreCards(button, sentences, showmore) {
-  let totalCards = document.querySelectorAll('.card').length+kek;
-  kek+=8;
+  let totalCards = document.querySelectorAll('.card').length + kek;
+  kek += 8;
   let cardsToShow = totalCards + showmore * 2;
 
   for (let i = totalCards; i < cardsToShow && i < sentences.length; i++) {
@@ -175,35 +175,35 @@ async function toggleCardContent(card, sentences) {
   //   heading.textContent = '';
   //   paragraph.textContent = ''; 
   // } else {
-    const cardIndex = parseInt(card.id.split('-')[1]);
-    heading.textContent = sentences[cardIndex];//display title-id of card
-    if (cardIndex < sentences.length) {
-      try {
-        const response = await fetch('sol.txt');
-        const data = await response.text();
-        const solution = data.trim().split('\n');
-        if (cardIndex > 0) {
-          let x = cardIndex / 2;
-          paragraph.textContent = solution[x] + `${x}`;
-        } else {
-          paragraph.textContent = solution[cardIndex] + `${cardIndex}`;
-        }
-      } catch (error) {
-        console.error('Error reading file:', error);
+  const cardIndex = parseInt(card.id.split('-')[1]);
+  heading.textContent = sentences[cardIndex];//display title-id of card
+  if (cardIndex < sentences.length) {
+    try {
+      const response = await fetch('sol.txt');
+      const data = await response.text();
+      const solution = data.trim().split('\n');
+      if (cardIndex > 0) {
+        let x = cardIndex / 2;
+        paragraph.textContent = solution[x] + `${x}`;
+      } else {
+        paragraph.textContent = solution[cardIndex] + `${cardIndex}`;
       }
-    } else {
-      paragraph.textContent = '';
+    } catch (error) {
+      console.error('Error reading file:', error);
     }
+  } else {
+    paragraph.textContent = '';
+  }
   // }
 }
 // txtbtn.preventDefault();
 //update sen.txt + sol.txt        serverside app
-document.getElementById('txtbtn').addEventListener('submit', (event)=> {
-event.preventDefault();
+document.getElementById('txtbtn').addEventListener('submit', (event) => {
+  event.preventDefault();
 
-console.log(event);
-console.debug()
-debugger;
+  console.log(event);
+  console.debug()
+  debugger;
   const t1 = document.getElementById('t1').value;
   const t2 = document.getElementById('t2').value;
   const t3 = document.getElementById('t3').value;
@@ -239,7 +239,7 @@ debugger;
 //update sen.txt + sol.txt        clientside app
 function addTextToFile() {
   var text = document.getElementById('t1').value;
-  var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+  var blob = new Blob([text], { type: "text/plain;charset=utf-8" });
   var link = document.createElement("a");
   var url = URL.createObjectURL(blob);
   link.setAttribute("href", url);
@@ -248,12 +248,12 @@ function addTextToFile() {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
- }
- 
- function remove(){
+}
+
+function remove() {
   const cards = document.querySelectorAll('.card');
-  for (let i = cards.length - 1; i >= cards.length - kek+8 && i >= 0; i--) {
+  for (let i = cards.length - 1; i >= cards.length - kek + 8 && i >= 0; i--) {
     cards[i].remove();
   }
-  if(kek>8)kek-=8
- }
+  if (kek > 8) { kek -= 8 } else kek = 0;
+}

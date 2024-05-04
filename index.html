@@ -88,55 +88,76 @@
 			<div class="wrapper2" id="wrapper2">
 				<h1>Color theme's the easy way</h1>
 				<p>^switch colortheme by pressing the radio button^</p>
-				<br>
+				<br />
 				<p>yes i hasan yildirim made this website. with a little help of chatgpd.</p>
 				<p>
-					beware, the site is still under construction, the idea of the sites functionality basicly is
-					that any website viewer can make custom cards on it, with frontside questions and
-					backside solution on each card, simply click the card to view the solution when you
-					feel like it.
+					beware, the site is still under construction, the idea of the sites functionality
+					basicly is that any website viewer can make custom cards on it, with frontside
+					questions and backside solution on each card, simply click the card to view the
+					solution when you feel like it.
 				</p>
 				<p>
 					add data to a card from the inputfield, see if you can figure out the solution which
 					is on other data file. hope this explains it in simple terms.
 				</p>
-				<br>
+				<br />
 				<h2>hint: Learn words</h2>
 				<form method="post" class="x" enctype="multipart/form-data">
 					<label for="t1">
 						<input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12"
 					/></label>
 					<label for="t2">
-						<input type="text" name="t2" id="t2" name="t2" placeholder="question" maxlength="12"
+						<input
+							type="text"
+							name="t2"
+							id="t2"
+							name="t2"
+							placeholder="question"
+							maxlength="12"
 					/></label>
 					<label for="t3">
-						<input type="text" name="t3" id="t3" name="t3" placeholder="solution" maxlength="12"
+						<input
+							type="text"
+							name="t3"
+							id="t3"
+							name="t3"
+							placeholder="solution"
+							maxlength="12"
 					/></label>
-					<button type="submit" id="txtbtn" >Add text to file</button>
+					<button type="submit" id="txtbtn">Add text to file</button>
 					<!-- submit onclick="l(this)" -->
-				</form><br>
+				</form>
+				<br />
 				<div class="auto-grid" id="card-holder">
 					<!-- cards -->
 				</div>
-				<br>
-				
-				<a href="https://humanbenchmark.com/">https://humanbenchmark.com/</a><br>
-				<a href="https://www.duolingo.com">https://www.duolingo.com</a><br>
-				<a href="https://quillbot.com/">https://quillbot.com/</a><br>
-				<a href="https://www.grammarly.com/paraphrasing-tool">https://www.grammarly.com/paraphrasing-tool</a><br>
-				<a href="https://www.feedough.com/">https://www.feedough.com/</a><br>
-				<a href="https://jenni.ai/">https://jenni.ai/</a><br>
-				<a href="https://www.getmagical.com/">https://www.getmagical.com/</a><br>
-				<a href="https://www.unriddle.ai/">https://www.unriddle.ai/</a><br>
-				<a href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/">https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/</a><br>
-				<a href="https://www.deepl.com/write#en/">https://www.deepl.com/write#en/</a><br>
-				<a href="http://openpsychometrics.org/">http://openpsychometrics.org/</a><br>
-				<a href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=">https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=</a><br>
+				<br />
 
-				<br>
-				<button type="button" id="txtbtn" onclick="addTextToFile()">save 'title' into .txt-file</button>
+				<a href="https://humanbenchmark.com/">https://humanbenchmark.com/</a><br />
+				<a href="https://www.duolingo.com">https://www.duolingo.com</a><br />
+				<a href="https://quillbot.com/">https://quillbot.com/</a><br />
+				<a href="https://www.grammarly.com/paraphrasing-tool"
+					>https://www.grammarly.com/paraphrasing-tool</a
+				><br />
+				<a href="https://www.feedough.com/">https://www.feedough.com/</a><br />
+				<a href="https://jenni.ai/">https://jenni.ai/</a><br />
+				<a href="https://www.getmagical.com/">https://www.getmagical.com/</a><br />
+				<a href="https://www.unriddle.ai/">https://www.unriddle.ai/</a><br />
+				<a href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/"
+					>https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/</a
+				><br />
+				<a href="https://www.deepl.com/write#en/">https://www.deepl.com/write#en/</a><br />
+				<a href="http://openpsychometrics.org/">http://openpsychometrics.org/</a><br />
+				<a href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text="
+					>https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=</a
+				><br />
+
+				<br />
+				<button type="button" id="txtbtn" onclick="addTextToFile()">
+					save 'title' into .txt-file
+				</button>
 				<button type="button" id="txtbtn" onclick="remove()">remove added cards</button>
-					<!-- submit onclick="l(this)" -->
+				<!-- submit onclick="l(this)" -->
 				<h5>hasan.yildirim@outlook.com</h5>
 			</div>
 			<!-- <form method="post" class="xx" enctype="multipart/form-data">
@@ -150,20 +171,30 @@
 	</body>
 	<script src="script.js"></script>
 	<!-- 
-		bugs that still need to be corrected: 
-		not being read correctlay +ids, when showmorebtn is being pressed,
-		a btn to decrease displayed cards(correct ids),
-		better english,
-		maybe use google translate api, instead of sol.txt,
-		some accessibility aria label for poor sight, handling, naming of tags,links,pic. 
+		todo
+		some accessibility aria label for ppl with poor sight, handling, naming of tags, links, pic.
 		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins?
-		same functionality on webpage, instead only locally,
-		a btn for new file(s) being loaded, displayed,
+		same functionality on webpage, instead local plz? or it will be viiewed as a failure,
+		a btn for new file 2 load, display,
+		fileupload with preventdefault reloading the page, wtf even chatgpd doesnt know why	
+	try adsense with banners after cleaning
+
+add footer, header, sidebar?, social-media-iconlist? add diffrent font courier?intel?
+maybe use google translate api, instead of sol.txt,		
+		todo bugs that still need to be corrected: 
+		ids not being correctly displayed, after remove then showmorebtn clicking,
+		btn to decrease cards(correct ids),
+		better english,
+		
+
+	maybe with correct prompts asking a webgenerator+designer ai+figma,canva,,
+	would yield better results than what i(x*chatgpdasskisser) have accomplished in a week
+
+	better link if possible from vercel wtf why they give it linkname khaki damn them
 		less overfunctionality, addevenetlisteners, unnecessry code.
 		maybe figure out, js problems on your own, instead rely -ask -copypaste from chatgpd.
-		fileupload which is somehow with preventdefault reloading the page, wtf even chatgpd doesnt know why
-	maybe with correct prompts asking an webgenerator ai, would yield better results than what i(x*chatgpdasskisser) have accomplished in a week
-	better domain if possible from vercel wtf why they give it link khaki damn them
-	try adsense with banners after cleaning
--->
-</html>
+	this whole damn thing took me 3+ days imagine working with pressure for some1
+	i need to rethink how im gonna organize css not to be too a mess, also nameing variables with camelCase
+
+	i dont see myself a coding candidate where do i even belong? wtf am i even trying to become which am not or too late,few for???
+--></html>

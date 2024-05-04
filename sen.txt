@@ -1,134 +1,120 @@
-card1 title
+title 0
 oak. 
-card2 title
+title 1
 club. 
-card3 title
+title 2
 juggle. 
-card4 title
+title 3
 embellish. 
-card5 title
+title 4
 divest. 
-card6 title
+title 5
 efface. 
-card7 title
+title 6
 implore. 
-card8 title
+title 7
 infallible. 
-card9 title 
+title 8
 racant. 
-card10 title
+title 9
 recoup. 
-card11 title
+title 10
 lax. 
-card12 title
+title 11
 delectable. 
-card13 title 
+title 12
 quash. 
-card14 title
+title 13
 entrapment. 
-card15 title
+title 14
 prattle. 
-card16 title
+title 15
 assail. 
-card17 title
+title 16
 designate. 
-card18 title
+title 17
 arcane. 
-card19 title
+title 18
 leeway. 
-card20 title
+title 19
 pleat. 
-card21 title
+title 20
 solder. 
-card22 title
+title 21
 beguile. 
-card23 title
+title 22
 seduce. 
-card24 title
+title 23
 dowager. 
-card25 title
+title 24
 matron. 
-card26 title
+title 25
 sire. 
-card27 title
+title 26
 protracted. 
-card28 title 
+title 27
 florid. 
-card29 title
+title 28
 admissible. 
-card30 title 
+title 29
 drab. 
-card31 title
+title 30
 spiffy. 
-card32 title
+title 31
 facile. 
-card33 title
+title 32
 incipient. 
-card34 title
+title 33
 galling. 
-card35 title
+title 34
 nascent. 
-card36 title
+title 35
 subsidiary. 
-card37 title 
+title 36
 begrudge. 
-card38 title
+title 37
 breach. 
-card39 title
+title 38
 vehement. 
-card40 title
+title 39
 acquiesce. 
-card41 title
+title 40
 cauterize. 
-card42 title
+title 41
 yeast. 
-card43 title
+title 42
 doohickey. 
-card44 title
+title 43
 equestrian. 
-card45 title
+title 44
 niggardly. 
-card46 title
+title 45
 gargantuan. 
-card47 title
+title 46
 stanchion. 
-card48 title
+title 47
 strumpet. 
-card49 title
+title 48
 forstall. 
-card50 title
+title 49
 hanker. 
-card51 title
+title 50
 indolence. 
-card52 title
+title 51
 abscond. 
-card53 title
+title 52
 fugacious. 
-card54 title
+title 53
 querolous. 
-card55 title
+title 54
 vapid. 
-card56 title
+title 55
 inkling. 
-card57 title
+title 56
 rotund. 
-card58 title
+title 57
 shifty. 
-card59 title
+title 58
 stagnant. 
-card60 title
+title 59
 extemporaneous. 
-g
-gg
-h
-hh
-hi
-ii
-j
-jj
-m
-mm
-m
-mm
-m
-mm
