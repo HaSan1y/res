@@ -52,3 +52,7 @@ app.post('/sol', (req, res) => {
 //  xxx.addEventListener('click', () => { deleteLines('sen.txt', [0, 1, 2]); })
 
  app.listen(port, () => console.log(`Server listening at ${port}`));
+
+//  if you want to achieve the same functionality as your server.js (writing to files), you would need to use a different approach, such as:
+//  Using the fetch API to send requests to your server, which would then handle the file writing.
+//  Utilizing IndexedDB or other client-side storage mechanisms to store data locally in the browser.

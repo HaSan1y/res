@@ -137,6 +137,7 @@ async function displ() {
 }
 
 function showMoreCards(button, sentences, showmore) {
+
   let totalCards = document.querySelectorAll('.card').length + kek;
   kek += 8;
   let cardsToShow = totalCards + showmore * 2;
@@ -171,12 +172,8 @@ function showMoreCards(button, sentences, showmore) {
 async function toggleCardContent(card, sentences) {
   const heading = card.firstElementChild;
   const paragraph = card.lastElementChild;
-  // if (heading.textContent) {
-  //   heading.textContent = '';
-  //   paragraph.textContent = ''; 
-  // } else {
   const cardIndex = parseInt(card.id.split('-')[1]);
-  heading.textContent = sentences[cardIndex];//display title-id of card
+  heading.textContent = sentences[cardIndex];
   if (cardIndex < sentences.length) {
     try {
       const response = await fetch('sol.txt');
@@ -194,13 +191,10 @@ async function toggleCardContent(card, sentences) {
   } else {
     paragraph.textContent = '';
   }
-  // }
 }
-// txtbtn.preventDefault();
 //update sen.txt + sol.txt        serverside app
 document.getElementById('txtbtn').addEventListener('submit', (event) => {
   event.preventDefault();
-
   console.log(event);
   console.debug()
   debugger;
@@ -219,7 +213,6 @@ document.getElementById('txtbtn').addEventListener('submit', (event) => {
     .then(data => console.log(data))
     .catch(error => console.error('Error writing to sen.txt:', error));
 
-  // 
   fetch('http://127.0.0.1:3000/sol', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -230,11 +223,6 @@ document.getElementById('txtbtn').addEventListener('submit', (event) => {
     .catch(error => console.error('Error writing to sol.txt:', error));
 });
 
-
-// function xxx() {
-//   wrapper2.style.maxHeight = "10%";
-//   wrapper2.style.overflow = "hidden";
-// }
 
 //update sen.txt + sol.txt        clientside app
 function addTextToFile() {
@@ -253,7 +241,7 @@ function addTextToFile() {
 function remove() {
   const cards = document.querySelectorAll('.card');
   for (let i = cards.length - 1; i >= cards.length - kek + 8 && i >= 0; i--) {
-    cards[i].remove();
+    if(kek > i){
+      cards[i].remove();kek--}
   }
-  if (kek > 8) { kek -= 8 } else kek = 0;
 }
