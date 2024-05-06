@@ -6,10 +6,87 @@
 		<!-- <meta http-equiv="Content-Security-Policy" content="Access-Control-Allow-Origin='https://github.com/HaSan1y/res'; Vary='Origin'"> -->
 
 		<title>cards</title>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+			rel="stylesheet"
+		/>
+		<!-- <link href="css/bootstrap.min.css" rel="stylesheet" /> -->
+
 		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 	</head>
 	<body id="body">
+		<div class="container-fluid nav-bar bg-transparent">
+			<nav class="navbar navbar-expand-lg navbar-light py-0 px-4">
+				<button type="button" class="navbar-toggler">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<div class="navbar-nav ms-auto">
+						<a href="index.html" class="nav-item nav-link">Home</a>
+						<a href="#" class="nav-item nav-link">About</a>
+						<div class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle">Property</a>
+							<div class="dropdown-menu rounded-0 m-0">
+								<ul>
+									<li>
+										<a href="#" class="dropdown-item">Property List</a>
+									</li>
+									<li>
+										<a href="#" class="dropdown-item">Property Type</a>
+									</li>
+									<li>
+										<a href="#" class="dropdown-item">Property Agent</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="nav-item dropdown">
+							<a href="#" class="nav-link dropdown-toggle active">Pages</a>
+							<div class="dropdown-menu rounded-0 m-0">
+								<ul>
+									<li>
+										<a href="#" class="dropdown-item">Testimonial</a>
+									</li>
+									<li>
+										<a href="#" class="dropdown-item active">404 Error</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<a href="#" class="nav-item nav-link">Contact</a>
+					</div>
+					<a href="" class="btn btn-primary px-3 d-none d-lg-flex">Add Property</a>
+				</div>
+			</nav>
+		</div>
+		<div class="hol">
+			<div class="switche">
+				<input
+					type="range"
+					name="points"
+					onchange="filterme(this.value);"
+					min="1"
+					step="1"
+					id="custom-toggle"
+					class="tgl-def"
+					max="3"
+					value="2"
+				/>
+			</div>
+			<span>All</span>
+
+			<!-- Rounded switch -->
+			<label class="switch">
+				<input type="checkbox" />
+				<span class="slider round"></span>
+			</label>
+		</div>
+
 		<!-- cookie consent -->
 		<div class="wrapper">
 			<header>
@@ -86,20 +163,23 @@
 
 		<main>
 			<div class="wrapper2" id="wrapper2">
-				<h1>Color theme's the easy way</h1>
-				<p>^switch colortheme by pressing the radio button^</p>
-				<br />
-				<p>yes i hasan yildirim made this website. with a little help of chatgpd.</p>
-				<p>
-					beware, the site is still under construction, the idea of the sites functionality
-					basicly is that any website viewer can make custom cards on it, with frontside
-					questions and backside solution on each card, simply click the card to view the
-					solution when you feel like it.
-				</p>
-				<p>
-					add data to a card from the inputfield, see if you can figure out the solution which
-					is on other data file. hope this explains it in simple terms.
-				</p>
+				<div class="msg">
+					<h1>Color theme's the easy way</h1>
+					<p>^switch colortheme by pressing the radio button^</p>
+					<br />
+					<p>yes i hasan yildirim made this website. with a little help of chatgpd.</p>
+					<p>
+						beware, the site is still under construction, the idea of the sites functionality
+						basicly is that any website viewer can make custom cards on it, with frontside
+						questions and backside solution on each card, simply click the card to view the
+						solution when you feel like it.
+					</p>
+					<p>
+						add data to a card from the inputfield, see if you can figure out the solution
+						which is on other data file. hope this explains it in simple terms.
+					</p>
+				</div>
+
 				<br />
 				<h2>hint: Learn words</h2>
 				<form method="post" class="x" enctype="multipart/form-data">
@@ -125,76 +205,204 @@
 							maxlength="12"
 					/></label>
 					<button type="submit" id="txtbtn">Add text to file</button>
-					<!-- submit onclick="l(this)" -->
 				</form>
 				<br />
 				<div class="auto-grid" id="card-holder">
 					<!-- cards -->
 				</div>
 				<br />
+				<div id="show">
+					<button type="button" id="remove" onclick="remove()">remove cards</button>
+					<!-- showmorebtn -->
+				</div>
+				<br />
+				<div class="links">
+					<div class="">
+						<ol>
+							<li>
+								<a href="https://humanbenchmark.com/">https://humanbenchmark.com</a>
+							</li>
+							<li>
+								<a href="https://www.duolingo.com">https://www.duolingo.com</a>
+							</li>
+							<li>
+								<a href="https://quillbot.com/">https://quillbot.com</a>
+							</li>
+							<li>
+								<a href="https://www.grammarly.com/paraphrasing-tool"
+									>https://www.grammarly.com</a
+								>
+							</li>
+							<li>
+								<a href="https://www.feedough.com/">https://www.feedough.com</a>
+							</li>
+							<li>
+								<a href="https://jenni.ai/">https://jenni.ai</a>
+							</li>
+						</ol>
+					</div>
+					<div class="">
+						<ol>
+							<li>
+								<a href="https://www.getmagical.com/">https://www.getmagical.com</a>
+							</li>
+							<li>
+								<a href="https://www.unriddle.ai/">https://www.unriddle.ai</a>
+							</li>
+							<li>
+								<a href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/"
+									>https://mr-dialect.com</a
+								>
+							</li>
 
-				<a href="https://humanbenchmark.com/">https://humanbenchmark.com/</a><br />
-				<a href="https://www.duolingo.com">https://www.duolingo.com</a><br />
-				<a href="https://quillbot.com/">https://quillbot.com/</a><br />
-				<a href="https://www.grammarly.com/paraphrasing-tool"
-					>https://www.grammarly.com/paraphrasing-tool</a
-				><br />
-				<a href="https://www.feedough.com/">https://www.feedough.com/</a><br />
-				<a href="https://jenni.ai/">https://jenni.ai/</a><br />
-				<a href="https://www.getmagical.com/">https://www.getmagical.com/</a><br />
-				<a href="https://www.unriddle.ai/">https://www.unriddle.ai/</a><br />
-				<a href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/"
-					>https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/</a
-				><br />
-				<a href="https://www.deepl.com/write#en/">https://www.deepl.com/write#en/</a><br />
-				<a href="http://openpsychometrics.org/">http://openpsychometrics.org/</a><br />
-				<a href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text="
-					>https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=</a
-				><br />
+							<li>
+								<a href="http://openpsychometrics.org/">http://openpsychometrics.org</a>
+							</li>
+							<li>
+								<a href="https://www.deepl.com/write#en/">https://www.deepl.com</a>
+							</li>
+							<li>
+								<a href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text="
+									>https://translate.google.com</a
+								>
+							</li>
+						</ol>
+					</div>
+				</div>
 
 				<br />
-				<button type="button" id="txtbtn" onclick="addTextToFile()">
-					save 'title' into .txt-file
-				</button>
-				<button type="button" id="txtbtn" onclick="remove()">remove added cards</button>
-				<!-- submit onclick="l(this)" -->
-				<h5>hasan.yildirim@outlook.com</h5>
 			</div>
 			<!-- <form method="post" class="xx" enctype="multipart/form-data">
 				<label for="files">
 					<input type="file" name="files" id="files" accept=".png" name="pic" multiple />
 					 accept='video/*' upload any video >
 				</label>
-				<button type="submit" id="uploadBtn">Upload PNG</button>
+				<button type="submit" id="uploadBtn">Upload PNG</button>//preventdefault???
 			</form> -->
+
+			<!-- Footer -->
+			<footer>
+				<div class="container-fluid footer pt-5 mt-5">
+					<div class="container py-5">
+						<div class="row">
+							<div class="col-lg-3 col-md-6">
+								<h5 class="mb-4">Get In Touch</h5>
+								<p class="mb-2">
+									<i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+								</p>
+								<p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+								<p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+								<div class="d-flex pt-2">
+									<a class="btn btn-social" href=""><i class="fab fa-twitter"></i></a>
+									<a class="btn btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+									<a class="btn btn-social" href=""><i class="fab fa-youtube"></i></a>
+									<a class="btn btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6">
+								<h5 class="mb-4">Quick Links</h5>
+								<a class="btn btn-link" href="">About Us</a>
+								<a class="btn btn-link" href="">Contact Us</a>
+								<a class="btn btn-link" href="">Our Services</a>
+								<a class="btn btn-link" href="">Privacy Policy</a>
+								<a class="btn btn-link" href="">Terms & Condition</a>
+							</div>
+							<div class="col-lg-3 col-md-6">
+								<h5 class="mb-4">Photo Gallery</h5>
+								<div class="pt-2">
+									<div class="col-4">
+										<img class="img-fluid rounded bg-light p-1" src="" alt="" />
+									</div>
+									<div class="col-4">
+										<img class="img-fluid rounded bg-light p-1" src="" alt="" />
+									</div>
+									<div class="col-4">
+										<img class="img-fluid rounded bg-light p-1" src="" alt="" />
+									</div>
+									<div class="col-4">
+										<img class="img-fluid rounded bg-light p-1" src="" alt="" />
+									</div>
+									<div class="col-4">
+										<img class="img-fluid rounded bg-light p-1" src="" alt="" />
+									</div>
+									<div class="col-4">
+										<img class="img-fluid rounded bg-light p-1" src="" alt="" />
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-6">
+								<h5 class="mb-4">Newsletter</h5>
+								<p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+								<div class="position-relative mx-auto" style="max-width: 400px">
+									<input
+										class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+										type="text"
+										placeholder="Your email"
+									/>
+									<button
+										type="button"
+										class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"
+									>
+										SignUp
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="copyright">
+							<div class="row">
+								<div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+									&copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right
+									Reserved.
+									<h5>hasan.yildirim@outlook.com</h5>
+
+									<button type="button" id="tofile" onclick="addTextToFile()">
+										save 'title' into .txt-file
+									</button>
+								</div>
+								<div class="col-md-6 text-center text-md-end">
+									<div class="footer-menu">
+										<a href="">Home</a>
+										<a href="">Cookies</a>
+										<a href="">Help</a>
+										<a href="">FQAs</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Footer End -->
+
+			<!-- Back to Top -->
+			<a href="#" class="btn btn-lg btn-primary back-to-top"><i>^</i></a>
 		</main>
 	</body>
 	<script src="script.js"></script>
 	<!-- 
-		todo
-		some accessibility aria label for ppl with poor sight, handling, naming of tags, links, pic.
-		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins?
-		same functionality on webpage, instead local plz? or it will be viiewed as a failure,
-		a btn for new file 2 load, display,
+		todo :
+		accessibility aria-label for ppl with poor sight, handling, naming of tags, links, pic, tooltip,
+		fousstate, activated state, draggable?,shadow, loader before fetch complete?
+
+		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins? icons?
+		same functionality on webpage, instead local plz? or it will be viewed as a failure,
+		a labeled-btn for new file 2 load, display,
 		fileupload with preventdefault reloading the page, wtf even chatgpd doesnt know why	
-	try adsense with banners after cleaning
+		instead fileupload-rewrite, indexdb. client-storage since i dont run a server -.-!
+		try adsense with banners after cleaning
 
-add footer, header, sidebar?, social-media-iconlist? add diffrent font courier?intel?
-maybe use google translate api, instead of sol.txt,		
-		todo bugs that still need to be corrected: 
-		ids not being correctly displayed, after remove then showmorebtn clicking,
-		btn to decrease cards(correct ids),
+		footer, header, sidebar?, social-media-iconlist? add web||sys fonts, pagination?
+		maybe use google translate api, instead of sol.txt,		
 		better english,
-		
 
-	maybe with correct prompts asking a webgenerator+designer ai+figma,canva,,
-	would yield better results than what i(x*chatgpdasskisser) have accomplished in a week
-
-	better link if possible from vercel wtf why they give it linkname khaki damn them
-		less overfunctionality, addevenetlisteners, unnecessry code.
+		maybe with correct prompts asking a webgenerator+designer ai+figma,canva,,
+		would yield better results than what i(x*chatgpdasskisser) have accomplished in a week
+		less overfunctionality, addevenetlisteners, unnecessry code. service worker offline |cache?
 		maybe figure out, js problems on your own, instead rely -ask -copypaste from chatgpd.
-	this whole damn thing took me 3+ days imagine working with pressure for some1
-	i need to rethink how im gonna organize css not to be too a mess, also nameing variables with camelCase
+		this whole damn thing took me 3+ days imagine working with pressure for some1
+		i need to rethink how im gonna organize css not to be too a mess, also nameing variables with camelCase, foundations css/html/font/ui/js
 
-	i dont see myself a coding candidate where do i even belong? wtf am i even trying to become which am not or too late,few for???
+		i dont see myself a coding candidate where do i even belong? wtf am i even trying to become/accomplish? which am not, too late, few, slow not passionate, talented enogh for???
 --></html>

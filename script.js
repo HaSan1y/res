@@ -98,7 +98,7 @@ async function displ() {
 
     const showMoreButton = document.createElement('button');
     showMoreButton.textContent = 'Show More';
-    showMoreButton.setAttribute('id', 'abc');
+    showMoreButton.setAttribute('id', 'showmore');
     showMoreButton.addEventListener('click', () => {
       showMoreCards(showMoreButton, sentences, showmore);
     });
@@ -130,7 +130,7 @@ async function displ() {
       }
     }
 
-    cardHolder.appendChild(showMoreButton);
+    show.appendChild(showMoreButton);
   } catch (error) {
     console.error('Error reading file:', error);
   }
@@ -243,5 +243,33 @@ function remove() {
   for (let i = cards.length - 1; i >= cards.length - kek + 8 && i >= 0; i--) {
     if(kek > i){
       cards[i].remove();kek--}
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//3state slider
+function filterme(value) {
+  value = parseInt(value, 10); // Convert to an integer
+  var customToggle = document.getElementById('custom-toggle');
+  var spanElements = document.querySelectorAll('span');
+
+  if (value === 1) {
+    customToggle.classList.remove('tgl-off', 'tgl-def');
+    customToggle.classList.add('tgl-on');
+    spanElements.forEach(function(span) {
+      span.textContent = 'Enabled';
+    });
+  } else if (value === 2) {
+    customToggle.classList.remove('tgl-on', 'tgl-off');
+    customToggle.classList.add('tgl-def');
+    spanElements.forEach(function(span) {
+      span.textContent = 'Undetermined';
+    });
+  } else if (value === 3) {
+    customToggle.classList.remove('tgl-def', 'tgl-on');
+    customToggle.classList.add('tgl-off');
+    spanElements.forEach(function(span) {
+      span.textContent = 'Disabled';
+    });
   }
 }
