@@ -81,7 +81,8 @@ async function displ() {
     for (let i = 0; i < sentences.length; i++) {
       if (totalCards < showmore) {
         const card = document.createElement('div');
-        card.classList.add('card');
+        card.classList.add('card', 'bi', 'bi-hand-index-fill');
+        /*^this is the way to add space with javascript*/
         card.id = `card-${i}`;
         const heading = document.createElement('h2');
         heading.textContent = sentences[i];
@@ -112,7 +113,7 @@ function showMoreCards(button, sentences, showmore) {
   let cardsToShow = totalCards + showmore * 2;
   for (let i = totalCards; i < cardsToShow && i < sentences.length; i++) {
     const card = document.createElement('div');
-    card.classList.add('card');
+    card.classList.add('card', 'bi', 'bi-hand-index-fill');
     card.id = `card-${i}`;
 
     const heading = document.createElement('h2');
@@ -257,3 +258,11 @@ function filterme(value) {
   }
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+const colorOptions = document.querySelectorAll('.color-option');
+
+colorOptions.forEach(option => {
+  option.addEventListener('mouseover', () => {
+    const radioInput = option.querySelector('input[type="radio"]');
+    radioInput.checked = true;
+  });
+});

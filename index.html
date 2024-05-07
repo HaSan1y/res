@@ -45,7 +45,7 @@
 						</div>
 						<div class="nav-item dropdown">
 							<a href="#" class="nav-link dropdown-toggle active">Pages</a>
-							<div class="dropdown-menu rounded-0 m-0">
+							<div class="dropdown-menu">
 								<ul>
 									<li>
 										<a href="#" class="dropdown-item">Testimonial</a>
@@ -58,7 +58,7 @@
 						</div>
 						<a href="#" class="nav-item nav-link">Contact</a>
 					</div>
-					<a href="" class="btn btn-primary px-3 d-none d-lg-flex">Add Property</a>
+					<a href="" class="btn btn-primary">Add Property</a>
 				</div>
 			</nav>
 		</div>
@@ -140,23 +140,28 @@
 		<!-- colorpicker -->
 		<form class="color-picker">
 			<fieldset>
-				<legend class="visually-hidden"></legend>
-				<label for="light" class="visually-hidden"></label>
-				<input type="radio" name="theme" id="light" />
-
-				<label for="pink" class="visually-hidden"></label>
-				<input type="radio" id="pink" name="theme" />
-
-				<label for="blue" class="visually-hidden"></label>
-				<input type="radio" id="blue" name="theme" />
-
-				<label for="green" class="visually-hidden"></label>
-				<input type="radio" id="green" name="theme" />
-
-				<label for="dark" class="visually-hidden"></label>
-				<input type="radio" id="dark" name="theme" checked />
+			  <legend class="visually-hidden"></legend>
+			  <label for="light" class="color-option light">
+				 <input type="radio" name="theme" id="light" />
+			  </label>
+		 
+			  <label for="pink" class="color-option pink">
+				 <input type="radio" id="pink" name="theme" />
+			  </label>
+		 
+			  <label for="blue" class="color-option blue">
+				 <input type="radio" id="blue" name="theme" />
+			  </label>
+		 
+			  <label for="green" class="color-option green">
+				 <input type="radio" id="green" name="theme" />
+			  </label>
+		 
+			  <label for="dark" class="color-option dark">
+				 <input type="radio" id="dark" name="theme" checked />
+			  </label>
 			</fieldset>
-		</form>
+		 </form>
 
 		<main>
 			<div class="wrapper2" id="wrapper2">
@@ -164,16 +169,13 @@
 					<!-- <h1>Color theme's the easy way</h1>
 					<p>^switch colortheme by pressing the radio button^</p>
 					<br /> -->
-					<p>yes, i hasan yildirim constructed this Website, with a little help of chatgpd.</p>
+					<p>Yes, I hasan yildirim constructed this Website,</p> 
+					<p>with a little help of chatgpd.</p>
+					<p>Beware, site is still under construction, the idea of the sites functionality:</p>
+					<p>any viewer of the site can create custom cards, with frontside	text and backside solution text, </p>
+					<p> simply click on the card to view the solution whenever you feel like it.</p>
 					<p>
-						Beware, site is still under construction, the idea of the sites functionality is
-						that any viewer of the site can create custom cards on it, with frontside
-						questions and backside questions and a solution on the back of each card, simply
-						click on the card to view the solution whenever you feel like it.
-					</p>
-					<p>
-						Add data to a card from the input field, see if you can find the solution which is
-						on another file. hope this explains it in simple terms.
+						Add data to a card from the input field, see if you can find the solution which is on another file. hope this explains it in simple terms.
 					</p>
 				</div>
 
@@ -211,7 +213,7 @@
 					</form>
 				</div>
 
-				<div class="auto-grid" id="card-holder">
+				<div class="auto-grid text-center" id="card-holder">
 					<!-- cards -->
 				</div>
 				<br />
@@ -345,13 +347,13 @@
 									class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
 									type="text"
 									placeholder="Your email"
-								/>
-								<button
-									type="button"
-									class="btn btn-primary py-2 position-absolute top-0 end-0"
-								>
-									SignUp
-								</button>
+									/>
+									<button
+										type="button"
+										class="btn btn-primary py-2 position-absolute end-0"
+									>
+										SignUp
+									</button>
 							</div>
 						</div>
 					</div>
@@ -386,27 +388,28 @@
 	</body>
 	<script src="script.js"></script>
 	<!-- 
-		todo :
-		accessibility aria-label for ppl with poor sight, handling, naming of tags, links, pic, tooltip,
-		fousstate, activated state, draggable?,shadow, loader before fetch complete?
-		need to be more awere before coding, where and when to put padding>< , margin|| , max-width, 
-		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins? icons?
+		todo : need to clean up css left over names, redunant css,
+		accessibility aria-label for ppl with poor sight, handling, naming of tags, links, pic, tooltip, art,
+		fousstate, activated state, draggable?,shadow, loading.. before fetch complete?
+		need to be more awere before coding, where and when to put padding>< , margin|| not too much or overflow will happen only nec like in <i>, max-width, 
+		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins? icons? functions? animation wow transist effect,
 		same functionality on webpage, instead local plz? or it will be viewed as a failure,
 		a labeled-btn for new file 2 load, display,
 		fileupload with preventdefault reloading the page, wtf even chatgpd doesnt know why	
 		instead fileupload-rewrite, indexdb. client-storage since i dont run a server -.-!
-		try adsense with banners after cleaning
+		try adsense with banners after cleaning, 
+		need to steal functionality and design stuff, its a pain thinking/coming up with js which is executable, good looking
 
 		footer, header, sidebar?, social-media-iconlist? add web||sys fonts, pagination?
-		maybe use google translate api, instead of sol.txt,		
-		better english,
+		maybe use google translate api, instead of sol.txt, maybe use blob, maybe indexDB, maybe vercel has storage  look up...		
+		maybe better english to lesten the conflict with german grammar sentence structures fk,
 
-		maybe with correct prompts asking a webgenerator+designer ai+figma,canva,,
-		would yield better results than what i(x*chatgpdasskisser) have accomplished in a week
-		less overfunctionality, addevenetlisteners, unnecessry code. service worker offline |cache?
+		maybe with correct prompts asking a webgenerator+designer ai+figma,canva,
+		would yield better results than what i(x*chatgpdasskisser) have accomplished in over a week for a simple html js site,
+		less overfunctionality, less addevenetlisteners, less unnecessry code. service worker offline |cache?
 		maybe figure out, js problems on your own, instead rely -ask -copypaste from chatgpd.
-		this whole damn thing took me 3+ days imagine working with pressure for some1
-		i need to rethink how im gonna organize css not to be too a mess, also nameing variables with camelCase, foundations css/html/font/ui/js
-
+		this whole damn thing took me 3+ days... 1 week ongoing..., cleaning up takes all the time.. imagine working with pressure for some1  expecting shit be done in 3 days
+		i need to rethink how im gonna organize css not to be too a mess, also nameing variables with camelCase, foundations css/html/font/ui/js , naming of css when to margin, use what css,
+		also need to rethinkpayment, +legal shit, +not being screwed over by not paying asses,
 		i dont see myself a coding candidate where do i even belong? wtf am i even trying to become/accomplish? which am not, too late, few, slow not passionate, talented enogh for???
 --></html>
