@@ -215,7 +215,7 @@ body.hide {
   display: block;
   /* width: min(100% - 2rem, 1320px); */
   margin-inline: auto;
-  padding: 10px;
+  padding: 10px 10px 0 10px;
 }
 
 .bi-hand-index-fill::before {
@@ -276,20 +276,11 @@ body.hide {
   margin-inline: auto;
 }
 
-ol {
+h5 {
   list-style-type: none;
+  display: grid;
 }
 
-/*clr picker*/
-.visually-hidden {
-  /* clip: rect(0 0 0 0); 
-   clip-path: inset(50%);  
-   height: 1px; 
-   overflow: hidden; 
-   white-space: nowrap; 
-   width: 1px; */
-  position: absolute;
-}
 
 .color-picker {
   margin-inline: auto;
@@ -298,15 +289,13 @@ ol {
 .color-picker>fieldset {
   display: flex;
   justify-content: center;
+  align-items: center;
   border: 0;
   gap: 1.5rem;
   padding: 1rem 3rem;
   margin-inline: auto;
 }
 
-/* .color-picker>fieldset:hover {
-  width: fit-content;
-} */
 .color-picker input[type="radio"] {
   appearance: none;
   width: 1.5rem;
@@ -371,7 +360,8 @@ ol {
 .msg {
   padding: 40px;
   border-radius: 50px;
-  outline: 1px solid rgba(79, 79, 79, 0.233);line-height: 1.3;
+  outline: 1px solid rgba(79, 79, 79, 0.233);
+  line-height: 1.3;
 }
 
 /*** Footer ***/
@@ -379,7 +369,7 @@ footer,
 .links,
 main {
   border-top: 1px solid rgb(161, 161, 161);
-  margin-inline: auto;
+  margin: auto;padding-top: 20px;
 }
 
 .footer .btn.btn-social {
@@ -402,8 +392,8 @@ main {
 
 .footer .btn.btn-link {
   display: block;
-  margin-bottom: 5px;
-  padding: 0;
+  margin: 1px 0;
+  padding: 5px 0;
   text-align: left;
   font-size: 15px;
   font-weight: normal;
@@ -458,10 +448,14 @@ main {
   flex-wrap: wrap;
 }
 
-.pt-5 {
-  padding-top: 3rem !important
+h5+*{
+  padding: 10px 0;
 }
 
+.row>* {
+  line-height: 1.5;
+  padding: 20px 0;
+}
 
 .py-5 {
   padding-top: 3rem !important;
@@ -471,11 +465,6 @@ main {
 .col-lg-3 {
   flex: 0 0 auto;
   width: 25%
-}
-
-.col-md-6 {
-  flex: 0 0 auto;
-  width: 50%
 }
 
 .ps-4 {
@@ -535,15 +524,6 @@ main {
 
 .bg-light {
   background-color: #EFFDF5 !important
-}
-
-.btn-link:hover {
-  color: #009472
-}
-
-.btn-link:disabled,
-.btn-link.disabled {
-  color: #6c757d
 }
 
 .btn-primary {
@@ -610,7 +590,7 @@ main {
 
 .addtxtform {
   display: flex;
-  padding-inline: 20px;
+  padding: 10px 20px 0 20px;
   justify-content: space-between;
   align-items: center;
   filter: grayscale(1);
@@ -951,6 +931,7 @@ input:checked+.slider:before {
 }
 
 @media (min-width: 992px) {
+
   .container,
   .hol,
   footer,
