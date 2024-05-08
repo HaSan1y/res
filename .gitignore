@@ -1,6 +1,17 @@
 git config core.ignorecase false
+
+node_modules
+css/blog1.webp
+
 cgpd.md
+
+main.js
+new.html
+
 serv.js
 server2.js
+serv3.js
+trans.js
+
 svg.html
-node_modules
+preventdef.html
