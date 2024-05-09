@@ -375,8 +375,8 @@ main {
 
 .footer .btn.btn-link {
   display: block;
-  margin: 1px 0;
-  padding: 5px 0;
+  margin-top: 1px;
+  padding: 2px 0;
   text-align: left;
   font-size: 15px;
   font-weight: normal;
@@ -590,11 +590,9 @@ main {
   margin-right: 7px;
 }
 
-.btn-primary:hover {
+.btn-primary:not(:disabled):focus,
+.btn-primary:not(:disabled):hover {
   opacity: 0.7;
-}
-
-.btn-primary:focus {
   color: #000;
   background-color: #26c49f;
   border-color: #1ac099;
@@ -996,4 +994,9 @@ input:checked+.slider:before {
     transform: rotate(320deg)scaleX(-1);
   }
 
+}
+.deactivated{
+  outline: 2px solid red;
+  background-color: #666;
+  cursor: not-allowed;
 }

@@ -169,22 +169,27 @@
 			<div class="msg">
 				<!-- <h1>Color theme's the easy way</h1>
 					<p>^switch colortheme by pressing the radio button^</p-->
-				<p>Yes, I hasan yildirim constructed this Website,</p>
-				<p>with a little help of chatgpd.</p>
-				<p>Beware, site is still under construction, the idea of the sites functionality:</p>
 				<p>
-					any viewer of the site can create custom cards, with frontside text and backside
-					solution text,
+					Yes, I Hasan Yildirim constructed this Website. if you're wondering about Serverside
+					Adding/Updating Text. Storing Clientside with IndexDB, Adding/Updating Text. then
+					maybe you could actually learn something from here.
 				</p>
-				<p>simply click on the card to view the solution whenever you feel like it.</p>
+				<p>made ofc, with a little help of chatgpd.</p>
+				<p>Beware, Site's still under Construction.</p>
+
+				<p>Logic of the Site:</p>
 				<p>
-					Add data to a card from the input field, see if you can find the solution which is on
-					another file. hope this explains it in simple terms.
+					Client can Store/retrive Text 2x Frontside Query Text, 1x Backside Solution Text.
 				</p>
+				<p>Click on any Card to view its Solution.</p>
+				<p>
+					Data can be Submitted via the Input-field, see if you can figure out the Solution.
+				</p>
+				<p>i hope this explains it in simple terms. glhf</p>
 			</div>
 			<!-- submit form -->
 			<fieldset>
-				<label for="txtbtn">hint: Learn words</label>
+				<!-- <label for="txtbtn">hint: Learn words</label> -->
 				<form id="txtbtn" name="txtbtn">
 					<label for="t1">
 						<input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12"
@@ -215,8 +220,8 @@
 			</div>
 			<br />
 			<div id="show">
-				<button type="button" id="remove" class="btn-primary" onclick="remove()">
-					remove cards
+				<button type="button" id="remove" class="btn-primary" onclick="removeData()">
+					wipe indexdb
 				</button>
 				<!-- showmorebtn -->
 			</div>
@@ -353,39 +358,40 @@
 		</div>
 		<!-- <button type="button" id="tofile" onclick="addTextToFile()">clientside js save 'title' into .txt-file</button> -->
 		<!-- Footer End -->
-
 		<!-- Back to Top -->
 		<a href="#" class="btn btn-primary back-to-top"><i>^</i></a>
 
 		<script src="script.js"></script>
-		<!-- <script src="test.js"></script> -->
-		<!-- <script src="cardhandling.js"></script> -->
-		<script src="withindexdb.js"></script>
+		<script src="with-indexdb.js"></script>
+		<!-- <script src="client-crudfs2server.js"></script> -->
+		<!-- <script src="withpromise-indexdb.js"></script> -->
 	</body>
 
 	<!-- 
 		todo : need to clean up css left over names, redunant css,
 		accessibility aria-label for ppl with poor sight, handling, naming of tags, links, pic, tooltip, art,
 		fousstate, activated state, draggable?,shadow, loading.. before fetch complete?
-		need to be more awere before coding, where and when to put padding>< , margin|| not too much or overflow will happen only nec like in <i>, max-width, 
+		need to be more aware before coding, where and when to put padding>< , margin|| not too much or overflow will happen only nec like in <i>, max-width, 
 		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins? icons? functions? animation wow transist effect,
 		same functionality on webpage, instead local plz? or it will be viewed as a failure,
 		a labeled-btn for new file 2 load, display,
-		fileupload with preventdefault reloading the page, wtf even chatgpd doesnt know why	
+		fileupload with preventdefault reloading the page, wtf even chatgpd doesnt know why..--target id of the form instead btn	
 		instead fileupload-rewrite, indexdb. client-storage since i dont run a server -.-!
 		try adsense with banners after cleaning, 
-		need to steal functionality and design stuff, its a pain thinking/coming up with js which is executable, good looking
+		need to steal functionality and design stuff, its a pain 1week+ thinking/coming up with js which is executable, good looking
 
-		footer, header, sidebar?, social-media-iconlist? add web||sys fonts, pagination?
+		footer, header, sidebar?, node-routes? social-media-iconlist? add web||sys fonts, pagination?
 		maybe use google translate api, instead of sol.txt, maybe use blob, maybe indexDB, maybe vercel has storage  look up...		
-		maybe better english to lesten the conflict with german grammar sentence structures fk,
+		maybe better english to fewer the conflict with german grammar sentence structures fk,
 
-		maybe with correct prompts asking a webgenerator+designer ai+figma,canva,
+		maybe with correct prompts asking a complete webgenerator+designer ai+figma,canva,
 		would yield better results than what i(x*chatgpdasskisser) have accomplished in over a week for a simple html js site,
-		less overfunctionality, less addevenetlisteners, less unnecessry code. service worker offline |cache?
+		less overfunctionality, less addevenetlisteners, less unnecessry code. service worker offline |cache? 
+		first into hidden dom before displaying to the actual dom.
 		maybe figure out, js problems on your own, instead rely -ask -copypaste from chatgpd.
-		this whole damn thing took me 3+ days... 1 week ongoing..., cleaning up takes all the time.. imagine working with pressure for some1  expecting shit be done in 3 days
-		i need to rethink how im gonna organize css not to be too a mess, also nameing variables with camelCase, foundations css/html/font/ui/js , naming of css when to margin, use what css,
-		also need to rethinkpayment, +legal shit, +not being screwed over by not paying asses,
-		i dont see myself a coding candidate where do i even belong? wtf am i even trying to become/accomplish? which am not, too late, few, slow not passionate, talented enogh for???
---></html>
+		this whole damn thing took me 1 week ongoing..., cleaning up takes all the time.., doing js takes forever, imagine working with pressure for some1  expecting shit be done in 3 days
+		i need to rethink how im gonna organize css not to be too messy, also js nameing variables with camelCase, Objects, foundations css/html/font/ui/js , naming of css, when to margin, when to use what css,
+		also need to rethink payment, +legal shit, with actual clients, +not being screwed over by not paying,sueing asses, 
+		i dont see myself a coding candidate where do i even belong? wtf am i even trying to become/accomplish? which am not, too late, few, slow not passionate, talented enogh??? where do all my days go, what did/can i ever achieve/showcase/sell? im out of time.
+-->
+</html>
