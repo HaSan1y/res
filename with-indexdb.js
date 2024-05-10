@@ -1,4 +1,10 @@
-const cards = document.querySelectorAll("#card");
+
+if (true == false) {
+  const cards = document.querySelectorAll('[id^="card-"]');
+  // [id^="card-"]
+  // [id$="-\\d"]
+  console.log(cards.children);
+}
 const cardHolder = document.getElementById('card-holder');
 
 const request = window.indexedDB.open('myDatabase', 1);
@@ -9,6 +15,10 @@ request.onupgradeneeded = (event) => {
   sentencesStore.createIndex('sentence', 'sentence', { unique: true });
   const solutionsStore = db.createObjectStore('solutions', { keyPath: 'id', autoIncrement: true });
   solutionsStore.createIndex('solution', 'solution', { unique: true });
+
+  const idStore = db.createObjectStore('ids', { keyPath: 'store' });
+  idStore.put({ store: 'sentences', id: 0 });
+  idStore.put({ store: 'solutions', id: 0 });
 };
 request.onsuccess = (event) => {
   db = event.target.result;
@@ -18,34 +28,32 @@ request.onsuccess = (event) => {
 request.onerror = (event) => {
   console.error('Error opening database:', event.target.errorCode);
 };
+
 document.getElementById('txtbtn').addEventListener('submit', (event) => {
-  // event.preventDefault();
+  event.preventDefault();
   const t1 = document.getElementById('t1').value;
   const t2 = document.getElementById('t2').value;
   const t3 = document.getElementById('t3').value;
   const sentences = [t1, t2];
   const solutions = [t3];
-  let transaction = db.transaction('sentences', 'readwrite');
+  // sentencesStore.put({ id: sentencesStore.indexNames.length, sentence: sentences[1] });
+  const transaction = db.transaction(['sentences', 'solutions'], 'readwrite');
   const sentencesStore = transaction.objectStore('sentences');
+  const solutionsStore = transaction.objectStore('solutions');
   sentences.forEach((sentence) => {
     sentencesStore.add({ sentence: sentence });
-    // sentencesStore.put({ id: sentencesStore.indexNames.length, sentence: sentences[1] });
   });
-  transaction.oncomplete = () => {
-    console.log('Data added to database successfully1');
+  solutions.forEach((solution) => {
+    solutionsStore.put({ solution: solutions[0] });
+  });
+  transaction.onsuccess = () => {
+    console.log(`Data added to ${sentences}, ${solutions} store successfully`);
   };
+
   transaction.onerror = (event) => {
-    console.error('Error adding data to database:1', event.target.errorCode);
+    console.error(`Error reading Data: ${sentences}, ${solutions} store:`, event.target.error);
   };
-  transaction = db.transaction('solutions', 'readwrite');
-  const solutionsStore = transaction.objectStore('solutions');
-  solutionsStore.put({ solution: solutions[0] });
-  transaction.oncomplete = () => {
-    console.log('Data added to database successfully2');
-  };
-  transaction.onerror = (event) => {
-    console.error('Error adding data to database:2', event.target.errorCode);
-  };
+  location.reload();
 });
 
 async function display() {
@@ -79,53 +87,61 @@ async function display() {
     console.error('Error reading file:', error);
   }
 }
-
+// function display() {
+//   const transaction = db.transaction('sentences', 'readonly');
+//   const sentencesStore = transaction.objectStore('sentences');
+//   const request = sentencesStore.openCursor();
+//   request.onsuccess = (event) => {
+//     const cursor = event.target.result;
+//     if (cursor) {
+//       const card = document.createElement('div');
+//       card.classList.add('card');
+//       card.innerHTML = `
+//         <div class="card-body">
+//           <h5 class="card-title">${cursor.value.sentence}</h5>
+//           <p class="card-text">Solution goes here</p>
+//           <button class="btn btn-primary">Edit</button>
+//           <button class="btn btn-danger">Delete</button>
+//         </div>
+//       `;
+//       cardHolder.appendChild(card);
+//       cursor.continue();
+//     }
+//   };
+// }
 function displayCards(sen, sol) {
-  let showmore = 8; // Initial number of cards to display
-  let totalCards = 0; // Keep track of the total number of cards displayed
-  const showMoreButton = document.createElement('button');
-  showMoreButton.textContent = 'Show More';
-  showMoreButton.setAttribute('id', 'showmore');
-  showMoreButton.setAttribute('class', 'btn-primary');
-  showMoreButton.addEventListener('click', () => {
-    showMoreCards(showMoreButton, sen, sol);
-  });
-  for (let i = 0; i < sen.length; i++) {
-
-    if (totalCards < showmore) {
-      const card = document.createElement('div');
-      card.classList.add('card', 'bi', 'bi-hand-index-fill');
-      card.id = `card-${i / 2}`;
-      const heading = document.createElement('h2');
-      heading.textContent = sen[i].sentence;
-      const paragraph = document.createElement('p');
-      if (i + 1 < sen.length) {
-        paragraph.textContent = sen[i + 1].sentence;
-        i++;
-      }
-      card.addEventListener('click', () => {
-        toggleCardContent(card);
-      });
-      card.appendChild(heading);
-      card.appendChild(paragraph);
-      cardHolder.appendChild(card);
-      totalCards++;
-    } else {
-      break;
-    }
+  let showmore = 6; // Initial number of cards to display
+  let totalCards = sol.length; // 0Keep track of the total number of cards displayed
+  if (totalCards + 10 < showmore) {//+10 never
+    const showMoreButton = document.getElementById('showmore') || document.createElement('button');
+    showMoreButton.textContent = 'Show More';
+    showMoreButton.setAttribute('id', 'showmore');
+    showMoreButton.setAttribute('class', 'btn-primary');
+    showMoreButton.addEventListener('click', () => {
+      showMoreCards(showMoreButton, sen, sol);
+    });
+    show.appendChild(showMoreButton);
   }
-  show.appendChild(showMoreButton);
+  for (let i = 0; i < sen.length && totalCards < showmore; i++) {
+    const card = document.createElement('div');
+    card.classList.add('card', 'bi', 'bi-hand-index-fill');
+    card.id = `card-${i / 2}`;
+    const heading = document.createElement('h2');
+    heading.textContent = sen[i].sentence;
+    const paragraph = document.createElement('p');
+    if (i + 1 < sen.length) {
+      paragraph.textContent = sen[i + 1].sentence;
+      i++;
+    }
+    card.addEventListener('click', () => {
+      toggleCardContent(card);
+    });
+    card.appendChild(heading);
+    card.appendChild(paragraph);
+    cardHolder.appendChild(card);
+    totalCards++;
+  }
 }
-//     if (totalCards < showmore) {
-//   const card = createCard(sen, i);
-//   cardHolder.appendChild(card);
-//   totalCards++;
-// } else {
-//   break;
-// }
-// }
-// show.appendChild(showMoreButton);
-// }
 
 async function toggleCardContent(card) {
   const [heading, paragraph] = [card.firstElementChild, card.lastElementChild];
@@ -145,23 +161,6 @@ async function toggleCardContent(card) {
   }
 }
 
-function showMoreCards(showMoreBtn, sentences, solutions) {
-  const totalCards = document.querySelectorAll('.card').length;
-  console.log(solutions);
-  // const cardsToShow = totalCards + showmore * 2;
-  // for (let i = totalCards; i < cardsToShow && i < sentences.length; i++) {
-
-  const cardsToShow = solutions.length + 1;
-  for (let i = totalCards; i < cardsToShow; i++) {
-    const displayviashowmore = true;
-    const card = createCard(sentences, i, displayviashowmore);
-    cardHolder.appendChild(card);
-    if (i + 1 < sentences.length) {
-      i++; // Increment i to skip the next sentence
-    }
-  }
-  toggleButton(showMoreBtn, cardsToShow, sentences.length);
-}
 function createCard(sentences, index, displayviashowmore) {
   const card = document.createElement('div');
   card.classList.add('card', 'bi', 'bi-hand-index-fill');
@@ -182,8 +181,51 @@ function createCard(sentences, index, displayviashowmore) {
   card.appendChild(heading);
   card.appendChild(paragraph);
   displayviashowmore = false;
+
   return card;
 }
+// wipeData indexdb called via button onclick="wipeData()"
+function wipeData() {
+  const removeDataFromStore = (storeName) => {
+    const transaction = db.transaction([storeName], 'readwrite');
+    const store = transaction.objectStore(storeName);
+
+    const clearRequest = store.clear();
+
+    clearRequest.onsuccess = () => {
+      console.log(`Data removed from ${storeName} store successfully`);
+    };
+
+    clearRequest.onerror = (event) => {
+      console.error(`Error removing data from ${storeName} store:`, event.target.error);
+    };
+  };
+  removeDataFromStore('sentences');
+  removeDataFromStore('solutions');
+
+  const idStore = db.transaction('ids', 'readwrite').objectStore('ids');
+  idStore.put({ store: 'sentences', id: 0 });
+  idStore.put({ store: 'solutions', id: 0 });
+  document.querySelectorAll('#card').forEach(card => card.remove());
+
+}
+// showmore cards if indexdb is overloaded than page displays
+function showMoreCards(showMoreBtn, sentences, solutions) {
+  const totalCards = document.querySelectorAll('.card').length;
+  console.log(solutions);
+
+  const cardsToShow = solutions.length + 1;
+  for (let i = totalCards; i < cardsToShow; i++) {
+    const displayviashowmore = true;
+    const card = createCard(sentences, i, displayviashowmore);
+    cardHolder.appendChild(card);
+    if (i + 1 < sentences.length) {
+      i++; // Increment i to skip the next sentence
+    }
+  }
+  toggleButton(showMoreBtn, cardsToShow, sentences.length);
+}
+
 function toggleButton(showMoreBtn, cardsToShow, sentencesLength) {
   if (cardsToShow >= sentencesLength) {
     showMoreBtn.classList.add('deactivated');
@@ -193,30 +235,5 @@ function toggleButton(showMoreBtn, cardsToShow, sentencesLength) {
     showMoreBtn.disabled = false;
   }
 }
-// called via button onclick="remove()"
-function removeData() {
-  let transaction = db.transaction('sentences', 'readwrite');
-  const sentencesStore = transaction.objectStore('sentences');
-  sentencesStore.clear();
-  transaction.oncomplete = () => {
-    console.log('Data removed from database successfully');
-  };
-  transaction.onerror = (event) => {
-    console.error('Error removing data from database:', event.target.errorCode);
-  };
-  // 
-  transaction = db.transaction('solutions', 'readwrite');
-  const solutionsStore = transaction.objectStore('solutions');
-  solutionsStore.clear();
-  transaction.oncomplete = () => {
-    console.log('Data removed from database successfully2');
-  };
-  transaction.onerror = (event) => {
-    console.error('Error removing data from database:2', event.target.errorCode);
-  };
-}
-//   const cards = document.querySelectorAll('.card');
-//   for (let i = cards.length - 1; i >= cards.length && i >= 0; i--) {
-//       cards[i].remove(); ;
-//   }
-// }
+// im unable to set ids from indexdb to 0 after a wipe
+// somehow im unable to logout all '#card-*' created with js  

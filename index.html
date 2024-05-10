@@ -178,9 +178,7 @@
 				<p>Beware, Site's still under Construction.</p>
 
 				<p>Logic of the Site:</p>
-				<p>
-					Client can Store/retrive Text 2x Frontside Query Text, 1x Backside Solution Text.
-				</p>
+				<p>Client can Store/retrive Text 2x Frontside Query Text, 1x Backside Solution Text.</p>
 				<p>Click on any Card to view its Solution.</p>
 				<p>
 					Data can be Submitted via the Input-field, see if you can figure out the Solution.
@@ -192,7 +190,14 @@
 				<!-- <label for="txtbtn">hint: Learn words</label> -->
 				<form id="txtbtn" name="txtbtn">
 					<label for="t1">
-						<input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12"
+						<input
+							type="text"
+							name="t1"
+							id="t1"
+							name="t1"
+							placeholder="title"
+							maxlength="12"
+							required
 					/></label>
 					<label for="t2">
 						<input
@@ -202,6 +207,7 @@
 							name="t2"
 							placeholder="question"
 							maxlength="12"
+							required
 					/></label>
 					<label for="t3">
 						<input
@@ -211,16 +217,18 @@
 							name="t3"
 							placeholder="solution"
 							maxlength="12"
+							required
 					/></label>
 					<button type="submit" class="btn-primary">Add text to file</button>
 				</form>
 			</fieldset>
 			<div class="auto-grid text-center" id="card-holder">
 				<!-- cards -->
+				
 			</div>
 			<br />
 			<div id="show">
-				<button type="button" id="remove" class="btn-primary" onclick="removeData()">
+				<button type="button" id="remove" class="btn-primary" onclick="wipeData()">
 					wipe indexdb
 				</button>
 				<!-- showmorebtn -->
@@ -393,5 +401,4 @@
 		i need to rethink how im gonna organize css not to be too messy, also js nameing variables with camelCase, Objects, foundations css/html/font/ui/js , naming of css, when to margin, when to use what css,
 		also need to rethink payment, +legal shit, with actual clients, +not being screwed over by not paying,sueing asses, 
 		i dont see myself a coding candidate where do i even belong? wtf am i even trying to become/accomplish? which am not, too late, few, slow not passionate, talented enogh??? where do all my days go, what did/can i ever achieve/showcase/sell? im out of time.
--->
-</html>
+--></html>

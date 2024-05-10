@@ -962,7 +962,15 @@ input:checked+.slider:before {
     opacity: 1;
   }
 }
-
+*::placeholder,
+*::placeholder::first-line,
+*::placeholder::content
+{ 
+  display: flex;
+  color: #000 !important;
+  align-items: center;
+  background: red;
+}
 @media (min-width: 1400px) {
 
   .container,
