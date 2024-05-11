@@ -1,15 +1,26 @@
 //developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
-if (true == false) {
-  const cards = document.querySelectorAll('[id^="card-"]');
-  // [id^="card-"]
-  // [id$="-\\d"]
-  console.log(cards.children);
-}
+// i was this close, but now i give up on indexdb, fuck how many hours?
+
+window.onload = () => {
+  document.documentElement.scrollIntoView();
+};
 const cardHolder = document.getElementById('card-holder');
 // self.indexedDB.open
 const request = window.indexedDB.open('myDatabase', 1);
 request.onerror = (request) => {
   console.error('Error opening database:', request.errorCode);
+};
+
+request.onupgradeneeded = (event) => {
+  const db = event.target.result;
+  const sentencesStore = db.createObjectStore('sentences', { keyPath: 'id', autoIncrement: true });
+  sentencesStore.createIndex('sentence', 'sentence', { unique: true });
+  const solutionsStore = db.createObjectStore('solutions', { keyPath: 'id', autoIncrement: true });
+  // creates outertable
+  solutionsStore.createIndex('solution', 'solution', { unique: true });
+  // create inner table 
+  console.log('4Databases create/load/indexed successfully');
+
 };
 request.onsuccess = (event) => {
   // db = DBOpenRequest.result;
@@ -21,136 +32,113 @@ request.onsuccess = (event) => {
   console.log('Database opened successfully');
   display();
 };
-request.onupgradeneeded = (event) => {
-  const db = event.target.result;
-  const sentencesStore = db.createObjectStore('sentences', { keyPath: 'id', autoIncrement: true });
-  sentencesStore.createIndex('sentence', 'sentence', { unique: true });
-  const solutionsStore = db.createObjectStore('solutions', { keyPath: 'id', autoIncrement: true });
-  // creates outertable
-  solutionsStore.createIndex('solution', 'solution', { unique: true });
-// create inner table 
-// console.log('4Databases created successfully');
-
-  // const idStore = db.createObjectStore('ids', { keyPath: 'store' });
-  // idStore.put({ store: 'sentences', id: 0 });
-  // idStore.put({ store: 'solutions', id: 0 });
-};
-
 
 document.getElementById('txtbtn').addEventListener('submit', (event) => {
   event.preventDefault();
+
   // const newItem = [ { t1: t1.value, t2: t2.value, t3: t3.value}, ];
-  const t1 = document.getElementById('t1').value;
-  const t2 = document.getElementById('t2').value;
-  const t3 = document.getElementById('t3').value;
+  const [t1, t2, t3] = [document.getElementById('t1').value, document.getElementById('t2').value, document.getElementById('t3').value]
   const sentences = [t1, t2];
   const solutions = [t3];
-  // sentencesStore.put({ id: sentencesStore.indexNames.length, sentence: sentences[1] });
+
   const transaction = db.transaction(['sentences', 'solutions'], 'readwrite');
-  const sentencesStore = transaction.objectStore('sentences');
-  const solutionsStore = transaction.objectStore('solutions');
+  const [sentencesStore, solutionsStore] = [transaction.objectStore('sentences'), transaction.objectStore('solutions')];
+
   sentences.forEach((sentence) => {
     sentencesStore.add({ sentence: sentence });
   });
+  // sentencesStore.put({ id: sentencesStore.indexNames.length, sentence: sentences[1] });
   solutions.forEach((solution) => {
-    solutionsStore.put({ solution: solutions[0] });
+    solutionsStore.add({ solution: solutions[0] });
   });
-  transaction.onsuccess = () => {
-    console.log(`Data added to ${sentences}, ${solutions} store successfully`);
+  transaction.onsuccess = (event) => {
+    console.log(`data success: ${transaction.objectStoreNames[0]}, ${transaction.objectStoreNames[1]}`, event.target.error);
   };
-
   transaction.oncomplete = () => {
     // note.appendChild(createListItem('Transaction completed: database modification finished.'));
     // Update the display of data to show the newly added item, by running displayData() again.
+    console.log(`Data added to ${transaction.objectStoreNames[0]}, ${transaction.objectStoreNames[1]} store successfully`);
     display();
   };
-  // location.reload();
+
   transaction.onerror = (event) => {
-    console.error(`Error reading Data: ${sentences}, ${solutions} store:`, event.target.error);
+    console.error(`Error reading Data: ${transaction.objectStoreNames[0]}, ${transaction.objectStoreNames[1]} store:`, event.target.error);
   };
 
+  // maybe make a single table in indexdb
   // const objectStoreRequest = transaction.add(newItem[0]);
   // objectStoreRequest.onsuccess = (event) => {
   //   note.appendChild(createListItem('Request successful.'));
   //   t1.value,t2.value,t3.value = '';
   // };
-  // x &&= x===x;
 });
 
 async function display() {
-      // First clear the content of the task list so that you don't get a huge long list of duplicate stuff each time
-    // the display is updated.
-    while (cardHolder.firstChild) {
-      cardHolder.removeChild(cardHolder.lastChild);
-    }
+  // First clear the content of the task list so that you don't get a huge long list of duplicate stuff each time
+  // the display is updated.
+  // while (cardHolder.firstChild) {
+  //   cardHolder.removeChild(cardHolder.lastChild);
+  // }
 
-    const sentencesStore = db.transaction('sentences', 'readonly').objectStore('sentences');
-    const sentencesRequest = sentencesStore.getAll();
-    sentencesRequest.onsuccess = (event) => {
-      // const cursor = event.target.result;
-      const sentences = event.target.result;
+  const sentencesRequest = db.transaction('sentences', 'readonly').objectStore('sentences').getAll();
+  sentencesRequest.onsuccess = (event) => {
+    // const cursor = event.target.result;
+    const sentences = event.target.result;
+    // Check if there are no (more) cursor items to iterate through
+    // if (!cursor) {
+    //   No more items to iterate through, we quit.
+    // note.appendChild(createListItem('Entries all displayed.'));
+    //   return;
+    // }
 
-      // Check if there are no (more) cursor items to iterate through
-      // if (!cursor) {
-      //   No more items to iterate through, we quit.
-      // note.appendChild(createListItem('Entries all displayed.'));
-      //   return;
-      // }
-
-        transaction = db.transaction('solutions', 'readonly');
-        const solutionsStore = transaction.objectStore('solutions');
-        const solutionsRequest = solutionsStore.getAll();
-        solutionsRequest.onsuccess = (event) => {
-          const solutions = event.target.result;
-          console.log(solutions);
-          console.log(sentences);
-          displayCards(sentences, solutions);
-        };
-        solutionsRequest.onerror = (event) => {
-          console.error('Error reading solution from database:', event.target.errorCode);
-        };
-
+    solutionsRequest = db.transaction('solutions', 'readonly').objectStore('solutions').getAll();
+    solutionsRequest.onsuccess = (event) => {
+      const solutions = event.target.result;
+      console.log(solutions, sentences);
+      displayCards(sentences, solutions);
     };
-    sentencesStore.onerror = (event) => {
+    solutionsRequest.onerror = (event) => {
+      console.error('Error reading solution from database:', event.target.errorCode);
+    };
+    sentencesRequest.onerror = (event) => {
       console.error('Error reading sentences from database:', event.target.errorCode);
     };
-
+  };
 }
-// function display() {
-//   const transaction = db.transaction('sentences', 'readonly');
-//   const sentencesStore = transaction.objectStore('sentences');
-//   const request = sentencesStore.openCursor();
-//   request.onsuccess = (event) => {
-//     const cursor = event.target.result;
-//     if (cursor) {
-//       const card = document.createElement('div');
-//       card.classList.add('card');
-//       card.innerHTML = `
-//         <div class="card-body">
-//           <h5 class="card-title">${cursor.value.sentence}</h5>
-//           <p class="card-text">Solution goes here</p>
-//           <button class="btn btn-primary">Edit</button>
-//           <button class="btn btn-danger">Delete</button>
-//         </div>
-//       `;
-//       cardHolder.appendChild(card);
-//       cursor.continue();
-//     }
-//   };
-// }
+
 function displayCards(sen, sol) {
   let showmore = 6; // Initial number of cards to display
   let totalCards = sol.length; // 0Keep track of the total number of cards displayed
-  if (totalCards + 10 < showmore) {//+10 never
-    const showMoreButton = document.getElementById('showmore') || document.createElement('button');
-    showMoreButton.textContent = 'Show More';
-    showMoreButton.setAttribute('id', 'showmore');
-    showMoreButton.setAttribute('class', 'btn-primary');
-    showMoreButton.addEventListener('click', () => {
-      showMoreCards(showMoreButton, sen, sol);
-    });
-    show.appendChild(showMoreButton);
-  }
+  // if (totalCards + 10 < showmore) {//+10 never
+  //   const showMoreButton = document.getElementById('showmore') || document.createElement('button');
+  //   showMoreButton.textContent = 'Show More';
+  //   showMoreButton.setAttribute('id', 'showmore');
+  //   showMoreButton.setAttribute('class', 'btn-primary');
+  //   showMoreButton.addEventListener('click', () => {
+  //     showMoreCards(showMoreButton, sen, sol);
+  //   });
+  //   show.appendChild(showMoreButton);
+  // }
+  //   const transaction = db.transaction('sentences', 'readonly');
+  //   const sentencesStore = transaction.objectStore('sentences');
+  //   const request = sentencesStore.openCursor();
+  //   request.onsuccess = (event) => {
+  //     const cursor = event.target.result;
+  //     if (cursor) {
+  //       const card = document.createElement('div');
+  //       card.classList.add('card');
+  //       card.innerHTML = `
+  //         <div class="card-body">
+  //           <h5 class="card-title">${cursor.value.sentence}</h5>
+  //           <p class="card-text">Solution goes here</p>
+  //           <button class="btn btn-primary">Edit</button>
+  //           <button class="btn btn-danger">Delete</button>
+  //         </div>
+  //       `;
+  //       cardHolder.appendChild(card);
+  //       cursor.continue();
+  //     }
+  //   };
   for (let i = 0; i < sen.length && totalCards < showmore; i++) {
     const card = document.createElement('div');
     card.classList.add('card', 'bi', 'bi-hand-index-fill');
@@ -167,9 +155,10 @@ function displayCards(sen, sol) {
     const deleteButton = document.createElement('button');
     paragraph.append(deleteButton);
     deleteButton.textContent = 'X';
-    deleteButton.setAttribute('data-task', '${taskTitle}');
-    deleteButton.onclick = (event) => {
-     console.log(' deleteItem(event);');
+    deleteButton.setAttribute('onclick', 'remover()');
+    deleteButton.onclick = (e) => {
+      paragraph.parentNode.remove();
+      console.log(' deleteItem(event);');
     };
     cardHolder.appendChild(card);
     totalCards++;
@@ -197,29 +186,6 @@ async function toggleCardContent(card) {
   }
 }
 
-function createCard(sentences, index, displayviashowmore) {
-  const card = document.createElement('div');
-  card.classList.add('card', 'bi', 'bi-hand-index-fill');
-  card.id = `card-${index}`;
-  const heading = document.createElement('h2');
-  if (!displayviashowmore) {
-    heading.textContent = sentences[index];
-  }
-  const paragraph = document.createElement('p');
-  if (index + 1 < sentences.length) {
-    let k;
-    if (!displayviashowmore) { k = 1 } else { k = 0; }
-    paragraph.textContent = sentences[index + k];
-  }
-  card.addEventListener('click', () => {
-    toggleCardContent(card);
-  });
-  card.appendChild(heading);
-  card.appendChild(paragraph);
-  displayviashowmore = false;
-
-  return card;
-}
 // wipeData indexdb called via button onclick="wipeData()"
 function wipeData() {
   const removeDataFromStore = (storeName) => {
@@ -239,47 +205,78 @@ function wipeData() {
   removeDataFromStore('sentences');
   removeDataFromStore('solutions');
 
-  // const idStore = db.transaction('ids', 'readwrite').objectStore('ids');
-  // idStore.put({ store: 'sentences', id: 0 });
-  // idStore.put({ store: 'solutions', id: 0 });
   document.querySelectorAll('#card').forEach(card => card.remove());
-
   // const dataTask = event.target.getAttribute('data-task');
   // const transaction = db.transaction(['toDoList'], 'readwrite');
   // transaction.objectStore('toDoList').delete(dataTask);
 }
-// showmore cards if indexdb is overloaded than page displays
-function showMoreCards(showMoreBtn, sentences, solutions) {
-  const totalCards = document.querySelectorAll('.card').length;
-  console.log(solutions);
-
-  const cardsToShow = solutions.length + 1;
-  for (let i = totalCards; i < cardsToShow; i++) {
-    const displayviashowmore = true;
-    const card = createCard(sentences, i, displayviashowmore);
-    cardHolder.appendChild(card);
-    if (i + 1 < sentences.length) {
-      i++; // Increment i to skip the next sentence
-    }
-  }
-  toggleButton(showMoreBtn, cardsToShow, sentences.length);
+function remover(e){
+  e.target.remove();
 }
+//////////////////////////////////////////////////////////////////////////
+// showmore cards if indexdb is > than page displaying
 
-function toggleButton(showMoreBtn, cardsToShow, sentencesLength) {
-  if (cardsToShow >= sentencesLength) {
-    showMoreBtn.classList.add('deactivated');
-    showMoreBtn.disabled = true;
-  } else {
-    showMoreBtn.classList.remove('deactivated');
-    showMoreBtn.disabled = false;
-  }
-}
+// function createCard(sentences, index, displayviashowmore) {
+//   const card = document.createElement('div');
+//   card.classList.add('card', 'bi', 'bi-hand-index-fill');
+//   card.id = `card-${index}`;
+//   const heading = document.createElement('h2');
+//   if (!displayviashowmore) {
+//     heading.textContent = sentences[index];
+//   }
+//   const paragraph = document.createElement('p');
+//   if (index + 1 < sentences.length) {
+//     let k;
+//     if (!displayviashowmore) { k = 1 } else { k = 0; }
+//     paragraph.textContent = sentences[index + k];
+//   }
+//   card.addEventListener('click', () => {
+//     toggleCardContent(card);
+//   });
+//   card.appendChild(heading);
+//   card.appendChild(paragraph);
+//   displayviashowmore = false;
+
+//   return card;
+// }
+//////////////////////////////////////////////////////////////////////////
+// function showMoreCards(showMoreBtn, sentences, solutions) {
+//   const totalCards = document.querySelectorAll('.card').length;
+//   console.log(solutions);
+
+//   const cardsToShow = solutions.length + 1;
+//   for (let i = totalCards; i < cardsToShow; i++) {
+//     const displayviashowmore = true;
+//     const card = createCard(sentences, i, displayviashowmore);
+//     cardHolder.appendChild(card);
+//     if (i + 1 < sentences.length) {
+//       i++; // Increment i to skip the next sentence
+//     }
+//   }
+//   toggleButton(showMoreBtn, cardsToShow, sentences.length);
+// }
+//////////////////////////////////////////////////////////////////////////
+// function toggleButton(showMoreBtn, cardsToShow, sentencesLength) {
+//   if (cardsToShow >= sentencesLength) {
+//     showMoreBtn.classList.add('deactivated');
+//     showMoreBtn.disabled = true;
+//   } else {
+//     showMoreBtn.classList.remove('deactivated');
+//     showMoreBtn.disabled = false;
+//   }
+// }
+//////////////////////////////////////////////////////////////////////////
 // im unable to set ids from indexdb to 0 after a wipe
-// somehow im unable select simple #card-*, logout all '#card-*' created with js 
-
+// somehow im unable select a simple #card-*, created with js, after dom reload
+// if (true == false) {
+//   const cards = document.querySelectorAll('[id^="card-"]');
+//   // [id^="card-"]  // [id$="-\\d"]
+//   console.log(cards.children);
+// }
 
 // function createListItem(contents) {
 //   const listItem = document.createElement('li');
 //   listItem.textContent = contents;
 //   return listItem;
 // };
+//////////////////////////////////////////////////////////////////////////

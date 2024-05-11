@@ -12,15 +12,19 @@
 		<link href="img/favicon.ico" rel="icon" />
 
 		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+			rel="stylesheet"
+			crossorigin="anonymous"
+		/>
 
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/animate/animate.min.css" />
-
 	</head>
+	<noscript> this website needs javascript </noscript>
 	<body id="body">
 		<!-- header -->
 
@@ -72,7 +76,17 @@
 		<!-- switch3 -->
 		<div class="swhol">
 			<label class="switche">
-				<input type="range" name="points" onchange="filterme(this.value);" min="1" step="1" id="custom-toggle" class="tgl-def" max="3" value="2" />
+				<input
+					type="range"
+					name="points"
+					onchange="filterme(this.value);"
+					min="1"
+					step="1"
+					id="custom-toggle"
+					class="tgl-def"
+					max="3"
+					value="2"
+				/>
 			</label>
 			<span>All</span>
 
@@ -89,7 +103,8 @@
 
 			<div class="data">
 				<p>
-					This website uses cookies, to help you have a superior and more admissible browsing experience<br /><a href="https://www.datenschutz.org/cookie-consent/"
+					This website uses cookies, to help you have a superior and more admissible browsing experience<br /><a
+						href="https://www.datenschutz.org/cookie-consent/"
 						>Read more...</a
 					>
 				</p>
@@ -104,12 +119,13 @@
 			<div class="modal-content">
 				<h2>Disclaimer and Liability Notice</h2>
 				<p>
-					This website contains information about job rejections, including reasons for rejection and feedback. The information is shared for informational purposes only
-					and does not constitute legal advice.
+					This website contains information about job rejections, including reasons for rejection and feedback. The
+					information is shared for informational purposes only and does not constitute legal advice.
 				</p>
 				<p>
-					<strong>Liability Disclaimer:</strong> The owner of this website is not liable for any defamation, privacy violations, or any other legal issues arising from
-					the content shared on this website. The information is provided without any warranties or guarantees.
+					<strong>Liability Disclaimer:</strong> The owner of this website is not liable for any defamation,
+					privacy violations, or any other legal issues arising from the content shared on this website. The
+					information is provided without any warranties or guarantees.
 				</p>
 				<p>By proceeding, you acknowledge that you understand and agree to the terms of this disclaimer.</p>
 				<label>
@@ -152,8 +168,9 @@
 				<!-- <h1>Color theme's the easy way</h1>
 					<p>^switch colortheme by pressing the radio button^</p-->
 				<p>
-					Yes, I Hasan Yildirim constructed this Website. if you're wondering about Serverside Adding/Updating Text. Storing Clientside with IndexDB, Adding/Updating
-					Text. then maybe you could actually learn something from here.
+					Yes, I Hasan Yildirim constructed this Website. if you're wondering about Serverside Adding/Updating
+					Text. Storing Clientside with IndexDB, Adding/Updating Text. then maybe you could actually learn
+					something from here.
 				</p>
 				<p>made ofc, with a little help of chatgpd.</p>
 				<p>Beware, Site's still under Construction.</p>
@@ -166,12 +183,18 @@
 			</div>
 			<!-- submit form -->
 			<fieldset>
-				correcponds correctly as long as you input unique inputs on each input...,
-				restart browser after clicking 'wipe'. ids in indexdb wont reset to 0 eventually..-.-
+				corresponds correctly as long as you input unique inputs on each input..., restart browser after clicking
+				'wipe'. ids in indexdb wont reset to 0 eventually..-.-
 				<form id="txtbtn" name="txtbtn">
-					<label for="t1"> <input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12" required /></label>
-					<label for="t2"> <input type="text" name="t2" id="t2" name="t2" placeholder="question" maxlength="12" required /></label>
-					<label for="t3"> <input type="text" name="t3" id="t3" name="t3" placeholder="solution" maxlength="12" required /></label>
+					<label for="t1">
+						<input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12" required
+					/></label>
+					<label for="t2">
+						<input type="text" name="t2" id="t2" name="t2" placeholder="question" maxlength="12" required
+					/></label>
+					<label for="t3">
+						<input type="text" name="t3" id="t3" name="t3" placeholder="solution" maxlength="12" required
+					/></label>
 					<button type="submit" class="btn-primary" name="submitBtn">Add text to file</button>
 				</form>
 			</fieldset>
@@ -180,13 +203,20 @@
 			</div>
 			<br />
 			<div id="show">
-				<button type="button" id="remove" class="btn-primary" onclick="wipeData()" name="wipeIndexDBBtn">wipeData indexdb</button>
+				<button type="button" id="remove" class="btn-primary" onclick="wipeData()" name="wipeIndexDBBtn">
+					wipeData indexdb
+				</button>
+				<button type="button" id="dis" class="btn-primary" onclick="display()" name="reload dom">
+					reload indexdb
+				</button>
 				<!-- showmorebtn -->
 			</div>
 			<br />
 			<div class="row">
 				<div class="col-lg links">
-					<a class="btn btn-link" href="https://humanbenchmark.com/" name="linkhumanbenchmark">https://humanbenchmark.com</a>
+					<a class="btn btn-link" href="https://humanbenchmark.com/" name="linkhumanbenchmark"
+						>https://humanbenchmark.com</a
+					>
 					<a class="btn btn-link" href="https://www.duolingo.com" name="linkduolingo">https://www.duolingo.com</a>
 					<a class="btn btn-link" href="https://quillbot.com/">https://quillbot.com</a>
 					<a class="btn btn-link" href="https://www.grammarly.com/paraphrasing-tool">https://www.grammarly.com</a>
@@ -196,10 +226,14 @@
 				<div class="col-lg links">
 					<a class="btn btn-link" href="https://www.getmagical.com/">https://www.getmagical.com</a>
 					<a class="btn btn-link" href="https://www.unriddle.ai/">https://www.unriddle.ai</a>
-					<a class="btn btn-link" href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/">https://mr-dialect.com</a>
+					<a class="btn btn-link" href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/"
+						>https://mr-dialect.com</a
+					>
 					<a class="btn btn-link" href="http://openpsychometrics.org/">http://openpsychometrics.org</a>
 					<a class="btn btn-link" href="https://www.deepl.com/write#en/">https://www.deepl.com</a>
-					<a class="btn btn-link" href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=">https://translate.google.com</a>
+					<a class="btn btn-link" href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text="
+						>https://translate.google.com</a
+					>
 				</div>
 			</div>
 			<br />
@@ -269,8 +303,17 @@
 
 						<form class="position-relative mx-auto" style="max-width: 400px">
 							<label for="email">email</label>
-							<input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" autocomplete="off" name="newsletter" id="email" />
-							<button type="button" class="btn btn-primary py-2 position-absolute end-0" name="signupBtn">SignUp</button>
+							<input
+								class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
+								type="text"
+								placeholder="Your email"
+								autocomplete="off"
+								name="newsletter"
+								id="email"
+							/>
+							<button type="button" class="btn btn-primary py-2 position-absolute end-0" name="signupBtn">
+								SignUp
+							</button>
 						</form>
 					</div>
 				</div>
@@ -300,33 +343,45 @@
 		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
 			<img src="css/blog1.webp" width="400" height="400" />
 		</section>
-		<section class="wow slideInRight" data-wow-duration="4s" data-wow-delay="1s">0000000000000000000000000000</section>
+		<section class="wow slideInRight" data-wow-duration="4s" data-wow-delay="1s">
+			0000000000000000000000000000
+		</section>
 		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
 			<img src="css/blog1.webp" width="400" height="400" />
 		</section>
-		<section class="wow slideInRight" data-wow-duration="2s" data-wow-delay="1s">0000000000000000000000000000</section>
+		<section class="wow slideInRight" data-wow-duration="2s" data-wow-delay="1s">
+			0000000000000000000000000000
+		</section>
 		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
 			<img src="css/blog1.webp" width="400" height="400" />
 		</section>
-		<section class="wow slideInRight" data-wow-duration="1s" data-wow-delay="1s">0000000000000000000000000000</section>
+		<section class="wow slideInRight" data-wow-duration="1s" data-wow-delay="1s">
+			0000000000000000000000000000
+		</section>
 		<section class="wow slideInLeft" data-wow-offset="5" data-wow-iteration="1">
 			<img src="css/blog1.webp" width="400" height="400" />
 		</section>
-		<section class="wow slideInRight" data-wow-duration="5s" data-wow-delay="3s">0000000000000000000000000000</section>
+		<section class="wow slideInRight" data-wow-duration="5s" data-wow-delay="3s">
+			0000000000000000000000000000
+		</section>
 		<section class="wow slideInLeft" data-wow-offset="2" data-wow-iteration="2">
 			<img src="css/blog1.webp" width="400" height="400" />
 		</section>
-		<section class="wow slideInRight fadeIn" data-wow-duration="3s" data-wow-delay="1s">0000000000000000000000000000</section>
+		<section class="wow slideInRight fadeIn" data-wow-duration="3s" data-wow-delay="1s">
+			0000000000000000000000000000
+		</section>
 
 		<!-- <script src="client-crudfs2server.js"></script> -->
-		<!-- <script src="withpromise-indexdb.js"></script> -->		
+		<!-- <script src="withpromise-indexdb.js"></script> -->
 		<script src="script.js"></script>
 		<script src="with-indexdb.js"></script>
 
 		<!-- npm i wowjs //animate.css-->
 		<script src="css/wow/wow.min.js"></script>
 		<!-- v has to be lastly initialed -->
-		<script>new WOW().init();</script>
+		<script>
+			new WOW().init();
+		</script>
 	</body>
 
 	<!-- 
