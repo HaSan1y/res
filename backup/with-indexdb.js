@@ -1,4 +1,4 @@
-//developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+
 if (true == false) {
   const cards = document.querySelectorAll('[id^="card-"]');
   // [id^="card-"]
@@ -6,7 +6,7 @@ if (true == false) {
   console.log(cards.children);
 }
 const cardHolder = document.getElementById('card-holder');
-// self.indexedDB.open
+
 const request = window.indexedDB.open('myDatabase', 1);
 request.onerror = (request) => {
   console.error('Error opening database:', request.errorCode);
@@ -39,7 +39,6 @@ request.onupgradeneeded = (event) => {
 
 document.getElementById('txtbtn').addEventListener('submit', (event) => {
   event.preventDefault();
-  // const newItem = [ { t1: t1.value, t2: t2.value, t3: t3.value}, ];
   const t1 = document.getElementById('t1').value;
   const t2 = document.getElementById('t2').value;
   const t3 = document.getElementById('t3').value;
@@ -59,30 +58,18 @@ document.getElementById('txtbtn').addEventListener('submit', (event) => {
     console.log(`Data added to ${sentences}, ${solutions} store successfully`);
   };
 
-  transaction.oncomplete = () => {
-    // note.appendChild(createListItem('Transaction completed: database modification finished.'));
-    // Update the display of data to show the newly added item, by running displayData() again.
-    display();
-  };
-  // location.reload();
   transaction.onerror = (event) => {
     console.error(`Error reading Data: ${sentences}, ${solutions} store:`, event.target.error);
   };
-
-  // const objectStoreRequest = transaction.add(newItem[0]);
-  // objectStoreRequest.onsuccess = (event) => {
-  //   note.appendChild(createListItem('Request successful.'));
-  //   t1.value,t2.value,t3.value = '';
-  // };
-  // x &&= x===x;
+  location.reload();
 });
 
 async function display() {
       // First clear the content of the task list so that you don't get a huge long list of duplicate stuff each time
     // the display is updated.
-    while (cardHolder.firstChild) {
-      cardHolder.removeChild(cardHolder.lastChild);
-    }
+    // while (taskList.firstChild) {
+    //   taskList.removeChild(taskList.lastChild);
+    // }
 
     const sentencesStore = db.transaction('sentences', 'readonly').objectStore('sentences');
     const sentencesRequest = sentencesStore.getAll();
@@ -162,20 +149,13 @@ function displayCards(sen, sol) {
       paragraph.textContent = sen[i + 1].sentence;
       i++;
     }
-    card.appendChild(heading);
-    card.appendChild(paragraph);
-    const deleteButton = document.createElement('button');
-    paragraph.append(deleteButton);
-    deleteButton.textContent = 'X';
-    deleteButton.setAttribute('data-task', '${taskTitle}');
-    deleteButton.onclick = (event) => {
-     console.log(' deleteItem(event);');
-    };
-    cardHolder.appendChild(card);
-    totalCards++;
     card.addEventListener('click', () => {
       toggleCardContent(card);
     });
+    card.appendChild(heading);
+    card.appendChild(paragraph);
+    cardHolder.appendChild(card);
+    totalCards++;
   }
 }
 
@@ -239,14 +219,11 @@ function wipeData() {
   removeDataFromStore('sentences');
   removeDataFromStore('solutions');
 
-  // const idStore = db.transaction('ids', 'readwrite').objectStore('ids');
-  // idStore.put({ store: 'sentences', id: 0 });
-  // idStore.put({ store: 'solutions', id: 0 });
+  const idStore = db.transaction('ids', 'readwrite').objectStore('ids');
+  idStore.put({ store: 'sentences', id: 0 });
+  idStore.put({ store: 'solutions', id: 0 });
   document.querySelectorAll('#card').forEach(card => card.remove());
 
-  // const dataTask = event.target.getAttribute('data-task');
-  // const transaction = db.transaction(['toDoList'], 'readwrite');
-  // transaction.objectStore('toDoList').delete(dataTask);
 }
 // showmore cards if indexdb is overloaded than page displays
 function showMoreCards(showMoreBtn, sentences, solutions) {
@@ -276,10 +253,3 @@ function toggleButton(showMoreBtn, cardsToShow, sentencesLength) {
 }
 // im unable to set ids from indexdb to 0 after a wipe
 // somehow im unable select simple #card-*, logout all '#card-*' created with js 
-
-
-// function createListItem(contents) {
-//   const listItem = document.createElement('li');
-//   listItem.textContent = contents;
-//   return listItem;
-// };

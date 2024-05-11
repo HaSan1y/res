@@ -3,28 +3,30 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- <meta
-			http-equiv="Content-Security-Policy"
-			content="Access-Control-Allow-Origin='https://127.0.0.1:5500'; Vary='Origin'"
-		/> -->
+		<!-- <meta'https://127.0.0.1:5500';/> -->
 		<!-- <meta http-equiv="Content-Security-Policy" content="Access-Control-Allow-Origin='https://github.com/HaSan1y/res'; Vary='Origin'"> -->
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src *; img-src *; child-src *; media-src *; script-src *;" />
+<meta http-equiv="X-Content-Security-Policy" content="default-src *; img-src *; child-src *; media-src *; script-src *;" /> -->
+		<meta Access-Control-Allow-Origin="no-cors" />
 		<title>cards</title>
-		<link rel="stylesheet" href="css/style.css" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-			rel="stylesheet"
-		/>
+		<link href="img/favicon.ico" rel="icon" />
+
 		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous" />
+
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/animate/animate.min.css" />
+
 	</head>
 	<body id="body">
 		<!-- header -->
+
 		<div class="container nav-bar bg-transparent">
 			<nav class="navbar navbar-expand-lg navbar-light py-0 px-4">
-				<button type="button" class="navbar-toggler">
+				<button type="button" class="navbar-toggler" name="headerNavToggler">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
@@ -69,19 +71,9 @@
 
 		<!-- switch3 -->
 		<div class="swhol">
-			<div class="switche">
-				<input
-					type="range"
-					name="points"
-					onchange="filterme(this.value);"
-					min="1"
-					step="1"
-					id="custom-toggle"
-					class="tgl-def"
-					max="3"
-					value="2"
-				/>
-			</div>
+			<label class="switche">
+				<input type="range" name="points" onchange="filterme(this.value);" min="1" step="1" id="custom-toggle" class="tgl-def" max="3" value="2" />
+			</label>
 			<span>All</span>
 
 			<!-- <label class="switch">
@@ -97,15 +89,14 @@
 
 			<div class="data">
 				<p>
-					This website uses cookies, to help you have a superior and more admissible browsing
-					experience<br /><a href="https://www.datenschutz.org/cookie-consent/"
+					This website uses cookies, to help you have a superior and more admissible browsing experience<br /><a href="https://www.datenschutz.org/cookie-consent/"
 						>Read more...</a
 					>
 				</p>
 			</div>
 			<div class="buttons">
-				<button type="button" class="button" id="acceptBtn">Accept</button>
-				<button type="button" class="button">Decline</button>
+				<button type="button" class="button" id="acceptBtn" name="acceptBtn">Accept</button>
+				<button type="button" class="button" name="declineBtn">Decline</button>
 			</div>
 		</header>
 		<!-- terms -->
@@ -113,30 +104,21 @@
 			<div class="modal-content">
 				<h2>Disclaimer and Liability Notice</h2>
 				<p>
-					This website contains information about job rejections, including reasons for
-					rejection and feedback. The information is shared for informational purposes only and
-					does not constitute legal advice.
+					This website contains information about job rejections, including reasons for rejection and feedback. The information is shared for informational purposes only
+					and does not constitute legal advice.
 				</p>
 				<p>
-					<strong>Liability Disclaimer:</strong> The owner of this website is not liable for
-					any defamation, privacy violations, or any other legal issues arising from the
-					content shared on this website. The information is provided without any warranties or
-					guarantees.
+					<strong>Liability Disclaimer:</strong> The owner of this website is not liable for any defamation, privacy violations, or any other legal issues arising from
+					the content shared on this website. The information is provided without any warranties or guarantees.
 				</p>
-				<p>
-					By proceeding, you acknowledge that you understand and agree to the terms of this
-					disclaimer.
-				</p>
+				<p>By proceeding, you acknowledge that you understand and agree to the terms of this disclaimer.</p>
 				<label>
 					<input type="checkbox" id="acknowledgeDisclaimer" required name="checkbox" />
 					I understand and agree to the terms of this disclaimer.
 				</label>
-				<p>
-					If you have any questions or concerns, please contact us at [Your Contact
-					Information].
-				</p>
+				<p>If you have any questions or concerns, please contact us at [Your Contact Information].</p>
 				<div class="modal-footer">
-					<button type="button" id="closeDisclaimerModal">Close</button>
+					<button type="button" id="closeDisclaimerModal" name="termsCloseBtn">Close</button>
 				</div>
 			</div>
 		</div>
@@ -170,9 +152,8 @@
 				<!-- <h1>Color theme's the easy way</h1>
 					<p>^switch colortheme by pressing the radio button^</p-->
 				<p>
-					Yes, I Hasan Yildirim constructed this Website. if you're wondering about Serverside
-					Adding/Updating Text. Storing Clientside with IndexDB, Adding/Updating Text. then
-					maybe you could actually learn something from here.
+					Yes, I Hasan Yildirim constructed this Website. if you're wondering about Serverside Adding/Updating Text. Storing Clientside with IndexDB, Adding/Updating
+					Text. then maybe you could actually learn something from here.
 				</p>
 				<p>made ofc, with a little help of chatgpd.</p>
 				<p>Beware, Site's still under Construction.</p>
@@ -180,94 +161,45 @@
 				<p>Logic of the Site:</p>
 				<p>Client can Store/retrive Text 2x Frontside Query Text, 1x Backside Solution Text.</p>
 				<p>Click on any Card to view its Solution.</p>
-				<p>
-					Data can be Submitted via the Input-field, see if you can figure out the Solution.
-				</p>
+				<p>Data can be Submitted via the Input-field, see if you can figure out the Solution.</p>
 				<p>i hope this explains it in simple terms. glhf</p>
 			</div>
 			<!-- submit form -->
 			<fieldset>
-				<!-- <label for="txtbtn">hint: Learn words</label> -->
+				correcponds correctly as long as you input unique inputs on each input...,
+				restart browser after clicking 'wipe'. ids in indexdb wont reset to 0 eventually..-.-
 				<form id="txtbtn" name="txtbtn">
-					<label for="t1">
-						<input
-							type="text"
-							name="t1"
-							id="t1"
-							name="t1"
-							placeholder="title"
-							maxlength="12"
-							required
-					/></label>
-					<label for="t2">
-						<input
-							type="text"
-							name="t2"
-							id="t2"
-							name="t2"
-							placeholder="question"
-							maxlength="12"
-							required
-					/></label>
-					<label for="t3">
-						<input
-							type="text"
-							name="t3"
-							id="t3"
-							name="t3"
-							placeholder="solution"
-							maxlength="12"
-							required
-					/></label>
-					<button type="submit" class="btn-primary">Add text to file</button>
+					<label for="t1"> <input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12" required /></label>
+					<label for="t2"> <input type="text" name="t2" id="t2" name="t2" placeholder="question" maxlength="12" required /></label>
+					<label for="t3"> <input type="text" name="t3" id="t3" name="t3" placeholder="solution" maxlength="12" required /></label>
+					<button type="submit" class="btn-primary" name="submitBtn">Add text to file</button>
 				</form>
 			</fieldset>
 			<div class="auto-grid text-center" id="card-holder">
 				<!-- cards -->
-				
 			</div>
 			<br />
 			<div id="show">
-				<button type="button" id="remove" class="btn-primary" onclick="wipeData()">
-					wipe indexdb
-				</button>
+				<button type="button" id="remove" class="btn-primary" onclick="wipeData()" name="wipeIndexDBBtn">wipeData indexdb</button>
 				<!-- showmorebtn -->
 			</div>
 			<br />
 			<div class="row">
-				<div class="col-lg-3 col-md-6 links">
-					<a class="btn btn-link" href="https://humanbenchmark.com/"
-						>https://humanbenchmark.com</a
-					>
-					<a class="btn btn-link" href="https://www.duolingo.com">https://www.duolingo.com</a>
+				<div class="col-lg links">
+					<a class="btn btn-link" href="https://humanbenchmark.com/" name="linkhumanbenchmark">https://humanbenchmark.com</a>
+					<a class="btn btn-link" href="https://www.duolingo.com" name="linkduolingo">https://www.duolingo.com</a>
 					<a class="btn btn-link" href="https://quillbot.com/">https://quillbot.com</a>
-					<a class="btn btn-link" href="https://www.grammarly.com/paraphrasing-tool"
-						>https://www.grammarly.com</a
-					>
+					<a class="btn btn-link" href="https://www.grammarly.com/paraphrasing-tool">https://www.grammarly.com</a>
 					<a class="btn btn-link" href="https://www.feedough.com/">https://www.feedough.com</a>
 					<a class="btn btn-link" href="https://jenni.ai/">https://jenni.ai</a>
 				</div>
-				<div class="col-lg-3 col-md-6 links">
-					<a class="btn btn-link" href="https://www.getmagical.com/"
-						>https://www.getmagical.com</a
-					>
+				<div class="col-lg links">
+					<a class="btn btn-link" href="https://www.getmagical.com/">https://www.getmagical.com</a>
 					<a class="btn btn-link" href="https://www.unriddle.ai/">https://www.unriddle.ai</a>
-					<a
-						class="btn btn-link"
-						href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/"
-						>https://mr-dialect.com</a
-					>
-					<a class="btn btn-link" href="http://openpsychometrics.org/"
-						>http://openpsychometrics.org</a
-					>
-					<a class="btn btn-link" href="https://www.deepl.com/write#en/"
-						>https://www.deepl.com</a
-					>
-					<a
-						class="btn btn-link"
-						href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text="
-						>https://translate.google.com</a
-					>
+					<a class="btn btn-link" href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/">https://mr-dialect.com</a>
+					<a class="btn btn-link" href="http://openpsychometrics.org/">http://openpsychometrics.org</a>
+					<a class="btn btn-link" href="https://www.deepl.com/write#en/">https://www.deepl.com</a>
+					<a class="btn btn-link" href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=">https://translate.google.com</a>
 				</div>
 			</div>
 			<br />
@@ -281,10 +213,10 @@
 			</form> -->
 		</main>
 		<!-- Footer -->
-		<div class="footer">
+		<div class="footer wow fadeIn" data-wow-delay="0.1s">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg">
 						<h5>Get In Touch</h5>
 						<p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
 						<p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
@@ -296,7 +228,7 @@
 							<a class="btn btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg">
 						<h5>Quick Links</h5>
 						<a class="btn btn-link" href="#">About Us</a>
 						<a class="btn btn-link" href="#">Contact Us</a>
@@ -304,7 +236,7 @@
 						<a class="btn btn-link" href="#">Privacy Policy</a>
 						<a class="btn btn-link" href="#">Terms & Condition</a>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg">
 						<h5>Photo Gallery</h5>
 						<div class="pt-2">
 							<div class="">
@@ -331,29 +263,25 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg">
 						<h5>Newsletter</h5>
 						<p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-						<div class="position-relative mx-auto" style="max-width: 400px">
-							<input
-								class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-								type="text"
-								placeholder="Your email"
-							/>
-							<button type="button" class="btn btn-primary py-2 position-absolute end-0">
-								SignUp
-							</button>
-						</div>
+
+						<form class="position-relative mx-auto" style="max-width: 400px">
+							<label for="email">email</label>
+							<input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" autocomplete="off" name="newsletter" id="email" />
+							<button type="button" class="btn btn-primary py-2 position-absolute end-0" name="signupBtn">SignUp</button>
+						</form>
 					</div>
 				</div>
 			</div>
 			<div class="container">
 				<div class="copyright row">
-					<div class="col-md-6 text-center text-md-start mb-md-0">
+					<div class="text-center text-md-start mb-md-0">
 						&copy; <a class="" href="#">Your Site Name</a>, All Right Reserved.
 						<h5>hasan.yildirim@outlook.com</h5>
 					</div>
-					<div class="col-md-6 text-center text-md-end">
+					<div class="text-center text-md-end">
 						<div class="footer-menu">
 							<a class="btn-link" href="#">Home</a>
 							<a class="btn-link" href="#">Cookies</a>
@@ -369,24 +297,50 @@
 		<!-- Back to Top -->
 		<a href="#" class="btn btn-primary back-to-top"><i>^</i></a>
 
+		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
+			<img src="css/blog1.webp" width="400" height="400" />
+		</section>
+		<section class="wow slideInRight" data-wow-duration="4s" data-wow-delay="1s">0000000000000000000000000000</section>
+		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
+			<img src="css/blog1.webp" width="400" height="400" />
+		</section>
+		<section class="wow slideInRight" data-wow-duration="2s" data-wow-delay="1s">0000000000000000000000000000</section>
+		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
+			<img src="css/blog1.webp" width="400" height="400" />
+		</section>
+		<section class="wow slideInRight" data-wow-duration="1s" data-wow-delay="1s">0000000000000000000000000000</section>
+		<section class="wow slideInLeft" data-wow-offset="5" data-wow-iteration="1">
+			<img src="css/blog1.webp" width="400" height="400" />
+		</section>
+		<section class="wow slideInRight" data-wow-duration="5s" data-wow-delay="3s">0000000000000000000000000000</section>
+		<section class="wow slideInLeft" data-wow-offset="2" data-wow-iteration="2">
+			<img src="css/blog1.webp" width="400" height="400" />
+		</section>
+		<section class="wow slideInRight fadeIn" data-wow-duration="3s" data-wow-delay="1s">0000000000000000000000000000</section>
+
+		<!-- <script src="client-crudfs2server.js"></script> -->
+		<!-- <script src="withpromise-indexdb.js"></script> -->		
 		<script src="script.js"></script>
 		<script src="with-indexdb.js"></script>
-		<!-- <script src="client-crudfs2server.js"></script> -->
-		<!-- <script src="withpromise-indexdb.js"></script> -->
+
+		<!-- npm i wowjs //animate.css-->
+		<script src="css/wow/wow.min.js"></script>
+		<!-- v has to be lastly initialed -->
+		<script>new WOW().init();</script>
 	</body>
 
 	<!-- 
 		todo : need to clean up css left over names, redunant css,
 		accessibility aria-label for ppl with poor sight, handling, naming of tags, links, pic, tooltip, art,
-		fousstate, activated state, draggable?,shadow, loading.. before fetch complete?
-		need to be more aware before coding, where and when to put padding>< , margin|| not too much or overflow will happen only nec like in <i>, max-width, 
+		fousstate, activated state, draggable?,shadow, 'loading...' before fetch complete.
+		need to be more aware before coding, where and when to put padding>< , margin|| not too much or overflow will happen only put around like icons, max-width, 
 		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins? icons? functions? animation wow transist effect,
-		same functionality on webpage, instead local plz? or it will be viewed as a failure,
-		a labeled-btn for new file 2 load, display,
-		fileupload with preventdefault reloading the page, wtf even chatgpd doesnt know why..--target id of the form instead btn	
-		instead fileupload-rewrite, indexdb. client-storage since i dont run a server -.-!
+		same functionality on webpage, instead local plz? or it will be viewed as a failure,1x with server,1x with indexdb,
+		a btn(labeled) for new file 2 display-load,
+		fileupload with preventdefault reloading the page, wtf even chatgpd doesnt know why..--solved--target id of form, instead of btn.
+		instead fileupload-rewrite, indexdb. client-storage since i dont run a server -.-!maybe next time with localstorage since indexdb is a bitch after a wipe
 		try adsense with banners after cleaning, 
-		need to steal functionality and design stuff, its a pain 1week+ thinking/coming up with js which is executable, good looking
+		need to steal js-functions and design stuff, its a pain 1week+ thinking/coming up ,with executable, good looking shit
 
 		footer, header, sidebar?, node-routes? social-media-iconlist? add web||sys fonts, pagination?
 		maybe use google translate api, instead of sol.txt, maybe use blob, maybe indexDB, maybe vercel has storage  look up...		

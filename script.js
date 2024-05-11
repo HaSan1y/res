@@ -2,6 +2,7 @@ const cookieBox = document.querySelector(".wrapper");
 const buttons = document.querySelectorAll(".button");
 const disc = document.querySelector("#disclaimerModal");
 
+
 // cookie+disclaimer//////////////////////////////////////////////////////////////////////////////
 const executeCodes = () => {
   if (!document.cookie.includes("cookie-consent")) {

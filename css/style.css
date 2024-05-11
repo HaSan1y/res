@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+/* consider getting rid of googlefonts^-preconnect?,bootstrap,font-awesome,boxicons or defer? them */
+/* always give images a with, and a height consider lazy-loading offscreen and hidden images*/
+/* WebP and AVIF often provide better compression than PNG /or JPEG (jpeg+bmp worst),
+MPEG4/WebM insteaa gif  any img also need alt*/
+/* always names for btn,input,img,links submitBtn,termsCloseBtn  <a name="linkhumanbenchmark" */
+/* labels before input, fieldset after form to group element inside inputs should also  have autocomplete='off',*/
+/* when you choose colors dont forget about: contrast ratio   black/white/bold-fett-16px-1rem  / never do[aria-hidden="true"] */
+/* dont go over 'tabindex=0' //dont forget about header/footer/main/section/select/textarea/*/
+/* dont forget about title,favicon,meta=describe website,  <noscript>  font-display:;*/
 
+/* what are Manifest do i ned it in my webpage? */
+
+/* how to 'Accept-Encoding: gzip, compress, br'  in order to reduce sizes of js.css*/
+/* Cache-Control: max-age=31536000 ||no-cache||   */
 .pink {
   --clr-body-bg: hsl(310 50% 90%);
   --clr-card-bg: hsl(310 50% 100%);
@@ -33,6 +46,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", "Georgia", sans-serif;
+  font-display: swap;
 }
 
 :root {
@@ -51,6 +65,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   font-family: system-ui, sans-serif;
+  font-display: swap;
   font-size: 1.25rem;
   line-height: 1.5;
   background: var(--clr-body-bg);
@@ -240,8 +255,8 @@ h2 {
 
 .links {
   display: grid;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: space-evenly;
+  padding: 20px 0;
   font-size: smaller;
 }
 
@@ -348,7 +363,6 @@ fieldset {
 
 /*** Footer ***/
 footer,
-.links,
 main {
   border-top: 1px solid rgb(161, 161, 161);
   margin: auto;
@@ -389,6 +403,7 @@ main {
   /* \f105 bootstrap*/
   content: ">";
   font-family: "Font Awesome 5 Free";
+  font-display: swap;
   font-weight: 900;
   margin-right: 10px;
 }
@@ -427,27 +442,20 @@ main {
 
 .copyright.row {
   padding: 10px 0;
+  display: flex;
+  justify-content: space-between !important;
 }
 
 /*--------------------------------------------bootstrap----------------------*/
 .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.col-lg-3 {
+.col-lg {
   flex: 0 0 auto;
   width: 25%;
-}
-
-.col-4 {
-  flex: 0 0 auto;
-  width: 33.33333%;
-}
-
-.col-md-6 {
-  flex: 0 0 auto;
-  width: 50%
 }
 
 .py-5 {
@@ -644,6 +652,7 @@ nav {
   /* \f107 == v */
   content: "\f107";
   font-family: "Font Awesome 5 Free";
+  font-display: swap;
   font-weight: 900;
   vertical-align: middle;
   margin-left: 5px;
@@ -857,6 +866,21 @@ input:checked+.slider:before {
   transform: scale(1.2);
 }
 
+*::placeholder,
+*::placeholder::first-line,
+*::placeholder::content {
+  display: flex;
+  color: #000 !important;
+  align-items: center;
+  background: red;
+}
+
+.deactivated {
+  outline: 2px solid red;
+  background-color: #666;
+  cursor: not-allowed;
+}
+
 /*///////////////////////////////////////////////////////////////////////////////////*/
 @media (max-width: 992px) {
   .nav-bar {
@@ -908,11 +932,6 @@ input:checked+.slider:before {
     flex-direction: row;
   }
 
-  .col-lg-3 {
-    flex: 0 0 auto;
-    width: 25%;
-  }
-
   .navbar-expand-lg {
     flex-wrap: nowrap;
     justify-content: flex-start;
@@ -962,15 +981,7 @@ input:checked+.slider:before {
     opacity: 1;
   }
 }
-*::placeholder,
-*::placeholder::first-line,
-*::placeholder::content
-{ 
-  display: flex;
-  color: #000 !important;
-  align-items: center;
-  background: red;
-}
+
 @media (min-width: 1400px) {
 
   .container,
@@ -991,7 +1002,7 @@ input:checked+.slider:before {
   }
 
   50% {
-    transform: rotate(320deg)scaleX(-1);
+    transform: rotate(180deg)scaleX(-1);
   }
 
   75% {
@@ -999,12 +1010,6 @@ input:checked+.slider:before {
   }
 
   100% {
-    transform: rotate(320deg)scaleX(-1);
+    transform: rotate(120deg)scaleX(-1);
   }
-
-}
-.deactivated{
-  outline: 2px solid red;
-  background-color: #666;
-  cursor: not-allowed;
 }
