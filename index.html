@@ -12,11 +12,7 @@
 		<link href="img/favicon.ico" rel="icon" />
 
 		<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-			rel="stylesheet"
-			crossorigin="anonymous"
-		/>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" crossorigin="anonymous" />
 
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,17 +72,7 @@
 		<!-- switch3 -->
 		<div class="swhol">
 			<label class="switche">
-				<input
-					type="range"
-					name="points"
-					onchange="filterme(this.value);"
-					min="1"
-					step="1"
-					id="custom-toggle"
-					class="tgl-def"
-					max="3"
-					value="2"
-				/>
+				<input type="range" name="points" onchange="filterme(this.value);" min="1" step="1" id="custom-toggle" class="tgl-def" max="3" value="2" />
 			</label>
 			<span>All</span>
 
@@ -102,12 +88,7 @@
 			<h2>Cookie Consent</h2>
 
 			<div class="data">
-				<p>
-					This website uses cookies, to help you have a superior and more admissible browsing experience<br /><a
-						href="https://www.datenschutz.org/cookie-consent/"
-						>Read more...</a
-					>
-				</p>
+				<p>This website uses cookies, to help you have a superior and more admissible browsing experience<br /><a href="https://www.datenschutz.org/cookie-consent/">Read more...</a></p>
 			</div>
 			<div class="buttons">
 				<button type="button" class="button" id="acceptBtn" name="acceptBtn">Accept</button>
@@ -119,13 +100,12 @@
 			<div class="modal-content">
 				<h2>Disclaimer and Liability Notice</h2>
 				<p>
-					This website contains information about job rejections, including reasons for rejection and feedback. The
-					information is shared for informational purposes only and does not constitute legal advice.
+					This website contains information about job rejections, including reasons for rejection and feedback. The information is shared for informational purposes only and does not constitute
+					legal advice.
 				</p>
 				<p>
-					<strong>Liability Disclaimer:</strong> The owner of this website is not liable for any defamation,
-					privacy violations, or any other legal issues arising from the content shared on this website. The
-					information is provided without any warranties or guarantees.
+					<strong>Liability Disclaimer:</strong> The owner of this website is not liable for any defamation, privacy violations, or any other legal issues arising from the content shared on this
+					website. The information is provided without any warranties or guarantees.
 				</p>
 				<p>By proceeding, you acknowledge that you understand and agree to the terms of this disclaimer.</p>
 				<label>
@@ -167,35 +147,32 @@
 			<div class="msg">
 				<!-- <h1>Color theme's the easy way</h1>
 					<p>^switch colortheme by pressing the radio button^</p-->
-				<p>
-					Yes, I Hasan Yildirim constructed this Website. if you're wondering about Serverside Adding/Updating
-					Text. Storing Clientside with IndexDB, Adding/Updating Text. then maybe you could actually learn
-					something from here.
-				</p>
-				<p>made ofc, with a little help of chatgpd.</p>
+
+				<p>Yes, I Hasan Yildirim constructed this Website, excuse me for bad english grammar structure i normally speak german, twisted i tell ya.</p>
+				<p>if you're wondering about Serverside Adding/Updating Text, Clientside with IndexDB Adding/Updating Text,</p>
+				<p>i even have a simple with server(nodejs) system with writing text into a file, and retriving. which can be found in this projects folder.</p>
+				<p>maybe you and your ai, crawler bot, could actually learn something from here, it took me days ok?</p>
+				<br />
+				<p>made ofc, with a little (sometimes confusing) help of chatgpd.</p>
 				<p>Beware, Site's still under Construction.</p>
 
 				<p>Logic of the Site:</p>
 				<p>Client can Store/retrive Text 2x Frontside Query Text, 1x Backside Solution Text.</p>
-				<p>Click on any Card to view its Solution.</p>
-				<p>Data can be Submitted via the Input-field, see if you can figure out the Solution.</p>
+				<p>Click on any Card to view its (Backside) Solution (pre-written by you)Text.</p>
+				<p>Data can be Submitted via the btn corresponding to the 3xInput-fields, see if you can figure out.</p>
 				<p>i hope this explains it in simple terms. glhf</p>
 			</div>
 			<!-- submit form -->
 			<fieldset>
-				corresponds correctly as long as you input unique inputs on each input..., restart browser after clicking
-				'wipe'. ids in indexdb wont reset to 0 eventually..-.-
+				<p>
+					corresponds correctly as long as you <i><b>always</b></i> input unique inputs on each input...,
+				</p>
+				<p>restart browser after clicking 'wipe'. ids in indexdb wont reset to 0 eventually..-.-</p>
 				<form id="txtbtn" name="txtbtn">
-					<label for="t1">
-						<input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12" required
-					/></label>
-					<label for="t2">
-						<input type="text" name="t2" id="t2" name="t2" placeholder="question" maxlength="12" required
-					/></label>
-					<label for="t3">
-						<input type="text" name="t3" id="t3" name="t3" placeholder="solution" maxlength="12" required
-					/></label>
-					<button type="submit" class="btn-primary" name="submitBtn">Add text to file</button>
+					<label for="t1"> <input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12" required /></label>
+					<label for="t2"> <input type="text" name="t2" id="t2" name="t2" placeholder="question" maxlength="12" required /></label>
+					<label for="t3"> <input type="text" name="t3" id="t3" name="t3" placeholder="solution" maxlength="12" required /></label>
+					<button type="submit" class="btn-primary" name="submitBtn"><b> Add text to indexDB </b></button>
 				</form>
 			</fieldset>
 			<div class="auto-grid text-center" id="card-holder">
@@ -204,19 +181,17 @@
 			<br />
 			<div id="show">
 				<button type="button" id="remove" class="btn-primary" onclick="wipeData()" name="wipeIndexDBBtn">
-					wipeData indexdb
+					<b> wipe indexdb </b>
 				</button>
 				<button type="button" id="dis" class="btn-primary" onclick="display()" name="reload dom">
-					reload indexdb
+					<b> reload indexdb </b>
 				</button>
 				<!-- showmorebtn -->
 			</div>
 			<br />
 			<div class="row">
 				<div class="col-lg links">
-					<a class="btn btn-link" href="https://humanbenchmark.com/" name="linkhumanbenchmark"
-						>https://humanbenchmark.com</a
-					>
+					<a class="btn btn-link" href="https://humanbenchmark.com/" name="linkhumanbenchmark">https://humanbenchmark.com</a>
 					<a class="btn btn-link" href="https://www.duolingo.com" name="linkduolingo">https://www.duolingo.com</a>
 					<a class="btn btn-link" href="https://quillbot.com/">https://quillbot.com</a>
 					<a class="btn btn-link" href="https://www.grammarly.com/paraphrasing-tool">https://www.grammarly.com</a>
@@ -226,14 +201,10 @@
 				<div class="col-lg links">
 					<a class="btn btn-link" href="https://www.getmagical.com/">https://www.getmagical.com</a>
 					<a class="btn btn-link" href="https://www.unriddle.ai/">https://www.unriddle.ai</a>
-					<a class="btn btn-link" href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/"
-						>https://mr-dialect.com</a
-					>
+					<a class="btn btn-link" href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/">https://mr-dialect.com</a>
 					<a class="btn btn-link" href="http://openpsychometrics.org/">http://openpsychometrics.org</a>
 					<a class="btn btn-link" href="https://www.deepl.com/write#en/">https://www.deepl.com</a>
-					<a class="btn btn-link" href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text="
-						>https://translate.google.com</a
-					>
+					<a class="btn btn-link" href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=">https://translate.google.com</a>
 				</div>
 			</div>
 			<br />
@@ -303,17 +274,8 @@
 
 						<form class="position-relative mx-auto" style="max-width: 400px">
 							<label for="email">email</label>
-							<input
-								class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-								type="text"
-								placeholder="Your email"
-								autocomplete="off"
-								name="newsletter"
-								id="email"
-							/>
-							<button type="button" class="btn btn-primary py-2 position-absolute end-0" name="signupBtn">
-								SignUp
-							</button>
+							<input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" autocomplete="off" name="newsletter" id="email" />
+							<button type="button" class="btn btn-primary py-2 position-absolute end-0" name="signupBtn">SignUp</button>
 						</form>
 					</div>
 				</div>
@@ -339,38 +301,348 @@
 		<!-- Footer End -->
 		<!-- Back to Top -->
 		<a href="#" class="btn btn-primary back-to-top"><i>^</i></a>
-
-		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
-			<img src="css/blog1.webp" width="400" height="400" />
-		</section>
-		<section class="wow slideInRight" data-wow-duration="4s" data-wow-delay="1s">
-			0000000000000000000000000000
-		</section>
-		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
-			<img src="css/blog1.webp" width="400" height="400" />
-		</section>
-		<section class="wow slideInRight" data-wow-duration="2s" data-wow-delay="1s">
-			0000000000000000000000000000
-		</section>
-		<section class="wow slideInLeft" data-wow-offset="10" data-wow-iteration="1">
-			<img src="css/blog1.webp" width="400" height="400" />
-		</section>
-		<section class="wow slideInRight" data-wow-duration="1s" data-wow-delay="1s">
-			0000000000000000000000000000
-		</section>
-		<section class="wow slideInLeft" data-wow-offset="5" data-wow-iteration="1">
-			<img src="css/blog1.webp" width="400" height="400" />
-		</section>
-		<section class="wow slideInRight" data-wow-duration="5s" data-wow-delay="3s">
-			0000000000000000000000000000
-		</section>
-		<section class="wow slideInLeft" data-wow-offset="2" data-wow-iteration="2">
-			<img src="css/blog1.webp" width="400" height="400" />
-		</section>
-		<section class="wow slideInRight fadeIn" data-wow-duration="3s" data-wow-delay="1s">
-			0000000000000000000000000000
+		<section name="wowplayground">
+			<img src="css/blog1.webp" width="100" height="100" class="wow slideInLeft" data-wow-offset="5" data-wow-iteration="1" data-wow-duration="2s" data-wow-delay="1s" />
+			<img src="css/blog1.webp" width="100" height="100" class="wow slideInRight" data-wow-offset="1" data-wow-iteration="1" data-wow-duration="2s" data-wow-delay="1s" />
+			<img src="css/blog1.webp" width="100" height="100" class="wow slideInDown" data-wow-offset="10" data-wow-iteration="1" data-wow-duration="3s" data-wow-delay="1s" />
+			<img src="css/blog1.webp" width="100" height="100" class="wow slideInUp" data-wow-offset="10" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay="1s" />
+			<img src="css/blog1.webp" width="100" height="100" class="wow slideInRight" data-wow-offset="10" data-wow-iteration="1" data-wow-duration="3s" data-wow-delay="1s" />
+			<img src="css/blog1.webp" width="100" height="100" class="wow slideInUp" data-wow-offset="0" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay="1s" />
 		</section>
 
+		<div style="display: none" class="slick-list draggable">
+			<div class="slick-track" style="opacity: 1; width: 15708px; transform: translate3d(-2541px, 0px, 0px); transition: transform 3000ms ease 0s">
+				<div class="slick-slide slick-cloned" data-slick-index="-6" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Stanford-Horizontal-300x103-1.svg"
+						alt="DS 454 Stanford Horizontal 300x103 1"
+						title="DS-454_Stanford-Horizontal-300×103"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="-5" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Nissan-300x73-1.svg" alt="DS 454 Nissan 300x73 1" title="DS-454_Nissan-300×73" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="-4" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_NIH-Horizontal-300x89-1.svg"
+						alt="DS 454 NIH Horizontal 300x89 1"
+						title="DS-454_NIH-Horizontal-300×89"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="-3" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Netflix-300x142-1.svg" alt="DS 454 Netflix 300x142 1" title="DS-454_Netflix-300×142" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="-2" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MOZ-300x92-1.svg" alt="DS 454 MOZ 300x92 1" title="DS-454_MOZ-300×92" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MIT-Horizontal-300x154-1.svg"
+						alt="DS 454 MIT Horizontal 300x154 1"
+						title="DS-454_MIT-Horizontal-300×154"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="0" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MinistryOfJustice-300x98-1.svg"
+						alt="DS 454 MinistryOfJustice 300x98 1"
+						title="DS-454_MinistryOfJustice-300×98"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="1" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Linux-300x103-1.svg" alt="DS 454 Linux 300x103 1" title="DS-454_Linux-300×103" />
+				</div>
+				<div class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Microsoft-300x69-1.svg" alt="DS 454 Microsoft 300x69 1" title="DS-454_Microsoft-300×69" />
+				</div>
+				<div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Lululemon-300x61-1.svg" alt="DS 454 Lululemon 300x61 1" title="DS-454_Lululemon-300×61" />
+				</div>
+				<div class="slick-slide" data-slick-index="4" aria-hidden="true" style="width: 231px" tabindex="0">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Harvard-300x79-1.svg" alt="DS 454 Harvard 300x79 1" title="DS-454_Harvard-300×79" />
+				</div>
+				<div class="slick-slide slick-current slick-active" data-slick-index="5" aria-hidden="false" style="width: 231px" tabindex="0">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Klaviyo-300x74-1.svg" alt="DS 454 Klaviyo 300x74 1" title="DS-454_Klaviyo-300×74" />
+				</div>
+				<div class="slick-slide slick-active" data-slick-index="6" aria-hidden="false" style="width: 231px" tabindex="0">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Kiva-300x125-1.svg" alt="DS 454 Kiva 300x125 1" title="DS-454_Kiva-300×125" />
+				</div>
+				<div class="slick-slide slick-active" data-slick-index="7" aria-hidden="false" style="width: 231px" tabindex="0">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_iHeartRadio-Horizontal-300x91-1.svg"
+						alt="DS 454 iHeartRadio Horizontal 300x91 1"
+						title="DS-454_iHeartRadio-Horizontal-300×91"
+					/>
+				</div>
+				<div class="slick-slide slick-active" data-slick-index="8" aria-hidden="false" style="width: 231px" tabindex="0">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_AWS-300x180-1.svg" alt="DS 454 AWS 300x180 1" title="DS-454_AWS-300×180" />
+				</div>
+				<div class="slick-slide slick-active" data-slick-index="9" aria-hidden="false" style="width: 231px" tabindex="0">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_LonelyPlanet-300x152-1.svg"
+						alt="DS 454 LonelyPlanet 300x152 1"
+						title="DS-454_LonelyPlanet-300×152"
+					/>
+				</div>
+				<div class="slick-slide slick-active" data-slick-index="10" aria-hidden="false" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_TestKitchen-300x113-1.svg"
+						alt="DS 454 TestKitchen 300x113 1"
+						title="DS-454_TestKitchen-300×113"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="11" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Google-300x103-1.svg" alt="DS 454 Google 300x103 1" title="DS-454_Google-300×103" />
+				</div>
+				<div class="slick-slide" data-slick-index="12" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_BibleSociety-300x107-1.svg"
+						alt="DS 454 BibleSociety 300x107 1"
+						title="DS-454_BibleSociety-300×107"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="13" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MIT-300x300-1.svg" alt="DS 454 MIT 300x300 1" title="DS-454_MIT-300×300" />
+				</div>
+				<div class="slick-slide" data-slick-index="14" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_BigCommerce-300x72-1.svg" alt="DS 454 BigCommerce 300x72 1" title="DS-454_BigCommerce-300×72" />
+				</div>
+				<div class="slick-slide" data-slick-index="15" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_CapitalOne-300x114-1.svg" alt="DS 454 CapitalOne 300x114 1" title="DS-454_CapitalOne-300×114" />
+				</div>
+				<div class="slick-slide" data-slick-index="16" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_CityOfDetroit-300x300-1.svg"
+						alt="DS 454 CityOfDetroit 300x300 1"
+						title="DS-454_CityOfDetroit-300×300"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="17" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Dartmouth-300x230-1.svg" alt="DS 454 Dartmouth 300x230 1" title="DS-454_Dartmouth-300×230" />
+				</div>
+				<div class="slick-slide" data-slick-index="18" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Facebook-Horizontal-300x60-1.svg"
+						alt="DS 454 Facebook Horizontal 300x60 1"
+						title="DS-454_Facebook-Horizontal-300×60"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="19" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Automattic-300x28-1.svg" alt="DS 454 Automattic 300x28 1" title="DS-454_Automattic-300×28" />
+				</div>
+				<div class="slick-slide" data-slick-index="20" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Amazon-300x95-1.svg" alt="DS 454 Amazon 300x95 1" title="DS-454_Amazon-300×95" />
+				</div>
+				<div class="slick-slide" data-slick-index="21" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_AMA-300x152-1.svg" alt="DS 454 AMA 300x152 1" title="DS-454_AMA-300×152" />
+				</div>
+				<div class="slick-slide" data-slick-index="22" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_UnitedNations-300x98-1.svg"
+						alt="DS 454 UnitedNations 300x98 1"
+						title="DS-454_UnitedNations-300×98"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="23" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Stripe-300x129-1.svg" alt="DS 454 Stripe 300x129 1" title="DS-454_Stripe-300×129" />
+				</div>
+				<div class="slick-slide" data-slick-index="24" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_StJudes-300x95-1.svg" alt="DS 454 StJudes 300x95 1" title="DS-454_StJudes-300×95" />
+				</div>
+				<div class="slick-slide" data-slick-index="25" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Stanford-Horizontal-300x103-1.svg"
+						alt="DS 454 Stanford Horizontal 300x103 1"
+						title="DS-454_Stanford-Horizontal-300×103"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="26" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Nissan-300x73-1.svg" alt="DS 454 Nissan 300x73 1" title="DS-454_Nissan-300×73" />
+				</div>
+				<div class="slick-slide" data-slick-index="27" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_NIH-Horizontal-300x89-1.svg"
+						alt="DS 454 NIH Horizontal 300x89 1"
+						title="DS-454_NIH-Horizontal-300×89"
+					/>
+				</div>
+				<div class="slick-slide" data-slick-index="28" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Netflix-300x142-1.svg" alt="DS 454 Netflix 300x142 1" title="DS-454_Netflix-300×142" />
+				</div>
+				<div class="slick-slide" data-slick-index="29" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MOZ-300x92-1.svg" alt="DS 454 MOZ 300x92 1" title="DS-454_MOZ-300×92" />
+				</div>
+				<div class="slick-slide" data-slick-index="30" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MIT-Horizontal-300x154-1.svg"
+						alt="DS 454 MIT Horizontal 300x154 1"
+						title="DS-454_MIT-Horizontal-300×154"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="31" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MinistryOfJustice-300x98-1.svg"
+						alt="DS 454 MinistryOfJustice 300x98 1"
+						title="DS-454_MinistryOfJustice-300×98"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="32" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Linux-300x103-1.svg" alt="DS 454 Linux 300x103 1" title="DS-454_Linux-300×103" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="33" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Microsoft-300x69-1.svg" alt="DS 454 Microsoft 300x69 1" title="DS-454_Microsoft-300×69" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="34" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Lululemon-300x61-1.svg" alt="DS 454 Lululemon 300x61 1" title="DS-454_Lululemon-300×61" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="35" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Harvard-300x79-1.svg" alt="DS 454 Harvard 300x79 1" title="DS-454_Harvard-300×79" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="36" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Klaviyo-300x74-1.svg" alt="DS 454 Klaviyo 300x74 1" title="DS-454_Klaviyo-300×74" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="37" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Kiva-300x125-1.svg" alt="DS 454 Kiva 300x125 1" title="DS-454_Kiva-300×125" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="38" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_iHeartRadio-Horizontal-300x91-1.svg"
+						alt="DS 454 iHeartRadio Horizontal 300x91 1"
+						title="DS-454_iHeartRadio-Horizontal-300×91"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="39" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_AWS-300x180-1.svg" alt="DS 454 AWS 300x180 1" title="DS-454_AWS-300×180" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="40" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_LonelyPlanet-300x152-1.svg"
+						alt="DS 454 LonelyPlanet 300x152 1"
+						title="DS-454_LonelyPlanet-300×152"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="41" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_TestKitchen-300x113-1.svg"
+						alt="DS 454 TestKitchen 300x113 1"
+						title="DS-454_TestKitchen-300×113"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="42" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Google-300x103-1.svg" alt="DS 454 Google 300x103 1" title="DS-454_Google-300×103" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="43" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_BibleSociety-300x107-1.svg"
+						alt="DS 454 BibleSociety 300x107 1"
+						title="DS-454_BibleSociety-300×107"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="44" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MIT-300x300-1.svg" alt="DS 454 MIT 300x300 1" title="DS-454_MIT-300×300" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="45" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_BigCommerce-300x72-1.svg" alt="DS 454 BigCommerce 300x72 1" title="DS-454_BigCommerce-300×72" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="46" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_CapitalOne-300x114-1.svg" alt="DS 454 CapitalOne 300x114 1" title="DS-454_CapitalOne-300×114" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="47" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_CityOfDetroit-300x300-1.svg"
+						alt="DS 454 CityOfDetroit 300x300 1"
+						title="DS-454_CityOfDetroit-300×300"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="48" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Dartmouth-300x230-1.svg" alt="DS 454 Dartmouth 300x230 1" title="DS-454_Dartmouth-300×230" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="49" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Facebook-Horizontal-300x60-1.svg"
+						alt="DS 454 Facebook Horizontal 300x60 1"
+						title="DS-454_Facebook-Horizontal-300×60"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="50" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Automattic-300x28-1.svg" alt="DS 454 Automattic 300x28 1" title="DS-454_Automattic-300×28" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="51" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Amazon-300x95-1.svg" alt="DS 454 Amazon 300x95 1" title="DS-454_Amazon-300×95" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="52" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_AMA-300x152-1.svg" alt="DS 454 AMA 300x152 1" title="DS-454_AMA-300×152" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="53" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_UnitedNations-300x98-1.svg"
+						alt="DS 454 UnitedNations 300x98 1"
+						title="DS-454_UnitedNations-300×98"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="54" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Stripe-300x129-1.svg" alt="DS 454 Stripe 300x129 1" title="DS-454_Stripe-300×129" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="55" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_StJudes-300x95-1.svg" alt="DS 454 StJudes 300x95 1" title="DS-454_StJudes-300×95" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="56" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Stanford-Horizontal-300x103-1.svg"
+						alt="DS 454 Stanford Horizontal 300x103 1"
+						title="DS-454_Stanford-Horizontal-300×103"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="57" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Nissan-300x73-1.svg" alt="DS 454 Nissan 300x73 1" title="DS-454_Nissan-300×73" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="58" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_NIH-Horizontal-300x89-1.svg"
+						alt="DS 454 NIH Horizontal 300x89 1"
+						title="DS-454_NIH-Horizontal-300×89"
+					/>
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="59" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_Netflix-300x142-1.svg" alt="DS 454 Netflix 300x142 1" title="DS-454_Netflix-300×142" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="60" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img decoding="async" src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MOZ-300x92-1.svg" alt="DS 454 MOZ 300x92 1" title="DS-454_MOZ-300×92" />
+				</div>
+				<div class="slick-slide slick-cloned" data-slick-index="61" id="" aria-hidden="true" style="width: 231px" tabindex="-1">
+					<img
+						decoding="async"
+						src="https://www.travis-ci.com/wp-content/uploads/2022/07/DS-454_MIT-Horizontal-300x154-1.svg"
+						alt="DS 454 MIT Horizontal 300x154 1"
+						title="DS-454_MIT-Horizontal-300×154"
+					/>
+				</div>
+			</div>
+		</div>
 		<!-- <script src="client-crudfs2server.js"></script> -->
 		<!-- <script src="withpromise-indexdb.js"></script> -->
 		<script src="script.js"></script>

@@ -107,6 +107,7 @@ async function display() {
 }
 
 function displayCards(sen, sol) {
+
   let showmore = 6; // Initial number of cards to display
   let totalCards = sol.length; // 0Keep track of the total number of cards displayed
   // if (totalCards + 10 < showmore) {//+10 never
@@ -153,9 +154,9 @@ function displayCards(sen, sol) {
     card.appendChild(heading);
     card.appendChild(paragraph);
     const deleteButton = document.createElement('button');
-    paragraph.append(deleteButton);
+    heading.append(deleteButton);
     deleteButton.textContent = 'X';
-    deleteButton.setAttribute('onclick', 'remover()');
+    deleteButton.setAttribute('class', 'removebtn');
     deleteButton.onclick = (e) => {
       paragraph.parentNode.remove();
       console.log(' deleteItem(event);');
@@ -205,14 +206,19 @@ function wipeData() {
   removeDataFromStore('sentences');
   removeDataFromStore('solutions');
 
-  document.querySelectorAll('#card').forEach(card => card.remove());
+  const cards = document.querySelectorAll('[id^="card-"]');
+  // [id^="card-"]  // [id$="-\\d"]
+  if (cards.length>=0) {
+    cards.forEach(card => card.remove());
+    console.log(cards);
+  }
   // const dataTask = event.target.getAttribute('data-task');
   // const transaction = db.transaction(['toDoList'], 'readwrite');
   // transaction.objectStore('toDoList').delete(dataTask);
 }
-function remover(e){
-  e.target.remove();
-}
+// function remover(e){
+//   e.target.remove();
+// }
 //////////////////////////////////////////////////////////////////////////
 // showmore cards if indexdb is > than page displaying
 
