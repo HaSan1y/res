@@ -28,3 +28,31 @@ Sentence Display
     Responsiveness: Ensure that the sentence display is responsive and adapts well to different screen sizes and devices.
 
 By addressing these suggestions, you can improve the overall quality, maintainability, and user experience of the provided code.
+
+	<!-- 
+		todo : need to clean up css left over names, redunant css,
+		accessibility aria-label for ppl with poor sight, handling, naming of tags, links, pic, tooltip, art,
+		fousstate, activated state, draggable?,shadow, 'loading...' before fetch complete.
+		need to be more aware before coding, where and when to put padding>< , margin|| not too much or overflow will happen only put around like icons, max-width, 
+		overall better userfriendly hq design, links, figma? canva?, 2d-3d?, addonplugins? icons? functions? animation wow transist effect,
+		same functionality on webpage, instead local plz? or it will be viewed as a failure,1x with server,1x with indexdb,
+		a btn(labeled) for new file 2 display-load,
+		fileupload with preventdefault reloading the page, wtf even chatgpd doesnt know why..--solved--target id of form, instead of btn.
+		instead fileupload-rewrite, indexdb. client-storage since i dont run a server -.-!maybe next time with localstorage since indexdb is a bitch after a wipe
+		try adsense with banners after cleaning, 
+		need to steal js-functions and design stuff, its a pain 1week+ thinking/coming up ,with executable, good looking shit
+
+		footer, header, sidebar?, node-routes? social-media-iconlist? add web||sys fonts, pagination?
+		maybe use google translate api, instead of sol.txt, maybe use blob, maybe indexDB, maybe vercel has storage  look up...		
+		maybe better english to fewer the conflict with german grammar sentence structures fk,
+
+		maybe with correct prompts asking a complete webgenerator+designer ai+figma,canva,
+		would yield better results than what i(x*chatgpdasskisser) have accomplished in over a week for a simple html js site,
+		less overfunctionality, less addevenetlisteners, less unnecessry code. service worker offline |cache? 
+		first into hidden dom before displaying to the actual dom.
+		maybe figure out, js problems on your own, instead rely -ask -copypaste from chatgpd.
+		this whole damn thing took me 1 week ongoing..., cleaning up takes all the time.., doing js takes forever, imagine working with pressure for some1  expecting shit be done in 3 days
+		i need to rethink how im gonna organize css not to be too messy, also js nameing variables with camelCase, Objects, foundations css/html/font/ui/js , naming of css, when to margin, when to use what css,
+		also need to rethink payment, +legal shit, with actual clients, +not being screwed over by not paying,sueing asses, 
+		i dont see myself a coding candidate where do i even belong? wtf am i even trying to become/accomplish? which am not, too late, few, slow not passionate, talented enogh??? where do all my days go, what did/can i ever achieve/showcase/sell? im out of time.
+-->
