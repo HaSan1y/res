@@ -1,5 +1,4 @@
 //developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
-// i was this close, but now i give up on indexdb, fuck how many hours?
 
 window.onload = () => {
   document.documentElement.scrollIntoView();
@@ -208,7 +207,7 @@ function wipeData() {
 
   const cards = document.querySelectorAll('[id^="card-"]');
   // [id^="card-"]  // [id$="-\\d"]
-  if (cards.length>=0) {
+  if (cards.length >= 0) {
     cards.forEach(card => card.remove());
     console.log(cards);
   }

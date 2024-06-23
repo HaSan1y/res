@@ -64,7 +64,7 @@
 						</div>
 						<a href="#" class="nav-item nav-link">Contact</a>
 					</div>
-					<a href="" class="btn btn-primary">Add Property</a>
+					<a href="" class="btn sw btn-primary">Switch db</a>
 				</div>
 			</nav>
 		</div>
@@ -118,6 +118,11 @@
 				</div>
 			</div>
 		</div>
+		<div class="yourbanner">
+			<div class="x">your banner</div>
+			<img src="#" alt=" " />
+		</div>
+
 		<!-- themeswitch -->
 		<form class="color-picker">
 			<fieldset>
@@ -143,31 +148,29 @@
 			</fieldset>
 		</form>
 
-		<main class="wrapper2" id="wrapper2">
+		<main>
 			<div class="msg">
 				<!-- <h1>Color theme's the easy way</h1>
 					<p>^switch colortheme by pressing the radio button^</p-->
 
-				<p>Yes, I Hasan Yildirim constructed this Website, excuse me for bad english grammar structure i normally speak german, twisted i tell ya.</p>
-				<p>if you're wondering about Serverside Adding/Updating Text, Clientside with IndexDB Adding/Updating Text,</p>
-				<p>i even have a simple with server(nodejs) system with writing text into a file, and retriving. which can be found in this projects folder.</p>
-				<p>maybe you and your ai, crawler bot, could actually learn something from here, it took me days ok?</p>
+				<p>I Hasan Yildirim constructed this Website &rBarr;</p>
+				<p>made of course, with a little (sometimes confusing) help of chatgpd. Beware, Site is still under Construction.</p>
 				<br />
-				<p>made ofc, with a little (sometimes confusing) help of chatgpd.</p>
-				<p>Beware, Site's still under Construction.</p>
-
-				<p>Logic of the Site:</p>
-				<p>Client can Store/retrive Text 2x Frontside Query Text, 1x Backside Solution Text.</p>
+				<p>Site-logic:</p>
+				<p>Client can Store/retrieve Text 2x Front-side(question), 1x Backside(Solution).</p>
 				<p>Click on any Card to view its (Backside) Solution (pre-written by you)Text.</p>
-				<p>Data can be Submitted via the btn corresponding to the 3xInput-fields, see if you can figure out.</p>
-				<p>i hope this explains it in simple terms. glhf</p>
+				<p>Data can be Submitted via btn corresponding to 3xInput-field.</p>
+				<p>i hope this explains it in simple terms.</p>
 			</div>
 			<!-- submit form -->
 			<fieldset>
-				<p>
-					corresponds correctly as long as you <i><b>always</b></i> input unique inputs on each input...,
-				</p>
-				<p>restart browser after clicking 'wipe'. ids in indexdb wont reset to 0 eventually..-.-</p>
+				<div class="bugs">
+					<p>
+						works as long as you <i><b>always</b></i> input unique inputs on each input..
+					</p>
+					<p>restart browser after clicking 'wipe-indexdb'. ids in indexdb wont reset to 0..</p>
+				</div>
+
 				<form id="txtbtn" name="txtbtn">
 					<label for="t1"> <input type="text" name="t1" id="t1" name="t1" placeholder="title" maxlength="12" required /></label>
 					<label for="t2"> <input type="text" name="t2" id="t2" name="t2" placeholder="question" maxlength="12" required /></label>
@@ -181,32 +184,15 @@
 			<br />
 			<div id="show">
 				<button type="button" id="remove" class="btn-primary" onclick="wipeData()" name="wipeIndexDBBtn">
-					<b> wipe indexdb </b>
+					<b> wipe-indexdb </b>
 				</button>
 				<button type="button" id="dis" class="btn-primary" onclick="display()" name="reload dom">
-					<b> reload indexdb </b>
+					<b> reload </b>
 				</button>
 				<!-- showmorebtn -->
 			</div>
 			<br />
-			<div class="row">
-				<div class="col-lg links">
-					<a class="btn btn-link" href="https://humanbenchmark.com/" name="linkhumanbenchmark">https://humanbenchmark.com</a>
-					<a class="btn btn-link" href="https://www.duolingo.com" name="linkduolingo">https://www.duolingo.com</a>
-					<a class="btn btn-link" href="https://quillbot.com/">https://quillbot.com</a>
-					<a class="btn btn-link" href="https://www.grammarly.com/paraphrasing-tool">https://www.grammarly.com</a>
-					<a class="btn btn-link" href="https://www.feedough.com/">https://www.feedough.com</a>
-					<a class="btn btn-link" href="https://jenni.ai/">https://jenni.ai</a>
-				</div>
-				<div class="col-lg links">
-					<a class="btn btn-link" href="https://www.getmagical.com/">https://www.getmagical.com</a>
-					<a class="btn btn-link" href="https://www.unriddle.ai/">https://www.unriddle.ai</a>
-					<a class="btn btn-link" href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/">https://mr-dialect.com</a>
-					<a class="btn btn-link" href="http://openpsychometrics.org/">http://openpsychometrics.org</a>
-					<a class="btn btn-link" href="https://www.deepl.com/write#en/">https://www.deepl.com</a>
-					<a class="btn btn-link" href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=">https://translate.google.com</a>
-				</div>
-			</div>
+
 			<br />
 
 			<!-- <form method="post" class="xx" enctype="multipart/form-data">
@@ -217,6 +203,24 @@
 				<button type="submit" id="uploadBtn">Upload PNG</button>//preventdefault???
 			</form> -->
 		</main>
+		<div class="row">
+			<div class="col-lg links">
+				<a class="btn btn-link" href="https://humanbenchmark.com/" name="linkhumanbenchmark">humanbenchmark</a>
+				<a class="btn btn-link" href="https://www.duolingo.com" name="linkduolingo">duolingo</a>
+				<a class="btn btn-link" href="https://quillbot.com/">quillbot</a>
+				<a class="btn btn-link" href="https://www.grammarly.com/paraphrasing-tool">grammarly</a>
+				<a class="btn btn-link" href="https://www.feedough.com/">feedough</a>
+				<a class="btn btn-link" href="https://jenni.ai/">jenni.ai</a>
+			</div>
+			<div class="col-lg links">
+				<a class="btn btn-link" href="https://www.getmagical.com/">getmagical</a>
+				<a class="btn btn-link" href="https://www.unriddle.ai/">unriddle.ai</a>
+				<a class="btn btn-link" href="https://mr-dialect.com/de-ch/deutsch-raetoromanisch-uebersetzer-2/">mr-dialect</a>
+				<a class="btn btn-link" href="http://openpsychometrics.org/">openpsychometrics</a>
+				<a class="btn btn-link" href="https://www.deepl.com/write#en/">deepl</a>
+				<a class="btn btn-link" href="https://translate.google.com/?hl=de&tab=TT&sl=en&tl=de&text=">translate.google</a>
+			</div>
+		</div>
 		<!-- Footer -->
 		<div class="footer wow fadeIn" data-wow-delay="0.1s">
 			<div class="container">
@@ -301,7 +305,7 @@
 		<!-- Footer End -->
 		<!-- Back to Top -->
 		<a href="#" class="btn btn-primary back-to-top"><i>^</i></a>
-		<section name="wowplayground">
+		<section class="wowplayground">
 			<img src="css/blog1.webp" width="100" height="100" class="wow slideInLeft" data-wow-offset="5" data-wow-iteration="1" data-wow-duration="2s" data-wow-delay="1s" />
 			<img src="css/blog1.webp" width="100" height="100" class="wow slideInRight" data-wow-offset="1" data-wow-iteration="1" data-wow-duration="2s" data-wow-delay="1s" />
 			<img src="css/blog1.webp" width="100" height="100" class="wow slideInDown" data-wow-offset="10" data-wow-iteration="1" data-wow-duration="3s" data-wow-delay="1s" />

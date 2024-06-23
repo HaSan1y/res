@@ -13,8 +13,7 @@ client-crudfs2server.js
 sol.txt
 sen.txt
 
-serv.js
-server2.js
+express
 goog-translate.js
 withpromise-indexdb.js
 
