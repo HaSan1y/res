@@ -207,9 +207,9 @@ h2 {
 /* cards */
 .auto-grid {
   display: grid;
-  gap: clamp(1rem, 5vmax, 1.625rem);
-  grid-template-columns: repeat(auto-fit,
-      minmax(min(100%, 225px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr));
+  gap: 10px;
+  padding: 10px;
 }
 
 .bi-hand-index-fill::before {
@@ -218,6 +218,8 @@ h2 {
 }
 
 .card {
+  position: relative;
+  max-width: 300px;
   padding: 1rem;
   background-color: var(--clr-card-bg);
   border-block-start: 0.5rem solid;
@@ -234,6 +236,7 @@ h2 {
 }
 
 #card-holder {
+  position: relative;
   opacity: 0.8;
   padding: 30px;
 }
@@ -404,8 +407,6 @@ main {
   position: relative;
   /* \f105 bootstrap*/
   content: ">";
-  font-family: "Font Awesome 5 Free";
-  font-display: swap;
   font-weight: 900;
   margin-right: 10px;
 }
@@ -659,8 +660,8 @@ nav {
   border: none;
   /* \f107 == v */
   content: "\f107";
-  font-family: "Font Awesome 5 Free";
-  font-display: swap;
+  /* font-family: "Font Awesome 5 Free";
+  font-display: swap; */
   font-weight: 900;
   vertical-align: middle;
   margin-left: 5px;
@@ -893,9 +894,26 @@ input:checked+.slider:before {
 }
 
 .removebtn {
+  top: 0;
+  right: 0;
+  position: absolute;
   outline: 2px solid red;
   opacity: 0.4;
-  border-radius: 50%;
+  border-radius: 25px;
+  cursor: not-allowed;
+  background-color: #666;
+  margin: 0 10px;
+
+  &:hover {
+    opacity: 1;
+    background-color: red;
+    cursor: pointer;
+  }
+
+}
+
+div#card {
+  position: relative;
 }
 
 .row,
@@ -1073,5 +1091,31 @@ fieldset {
 
   100% {
     transform: rotate(120deg)scaleX(-1);
+  }
+}
+
+#blink {
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
