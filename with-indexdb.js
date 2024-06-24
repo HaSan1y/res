@@ -5,7 +5,7 @@ window.onload = () => {
 };
 const cardHolder = document.getElementById("card-holder");
 // self.indexedDB.open
-const request = window.indexedDB.open("myDatabase", 1);
+const request = window.indexedDB.open("myDatabase", 1, { objectStores: 0 });
 request.onerror = (request) => {
 	console.error("Error opening database:", request.errorCode);
 };
@@ -192,6 +192,11 @@ function wipeData() {
 		const store = transaction.objectStore(storeName);
 
 		const clearRequest = store.clear();
+
+		// db = indexedDB.deleteDatabase("myDatabase");
+		// db.onsuccess = () => {
+		// 	console.log(`removed myDatabase `);
+		// };
 
 		clearRequest.onsuccess = () => {
 			console.log(`Data removed from ${storeName} store successfully`);

@@ -406,7 +406,8 @@ main {
 .footer .btn.btn-link::before {
   position: relative;
   /* \f105 bootstrap*/
-  content: ">";
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   margin-right: 10px;
 }
@@ -660,8 +661,8 @@ nav {
   border: none;
   /* \f107 == v */
   content: "\f107";
-  /* font-family: "Font Awesome 5 Free";
-  font-display: swap; */
+  font-family: "Font Awesome 5 Free";
+  font-display: swap;
   font-weight: 900;
   vertical-align: middle;
   margin-left: 5px;
